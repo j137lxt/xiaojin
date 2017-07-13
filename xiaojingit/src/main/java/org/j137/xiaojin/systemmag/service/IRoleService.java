@@ -1,5 +1,6 @@
 package org.j137.xiaojin.systemmag.service;
 
+import org.j137.xiaojin.beans.Page;
 import org.j137.xiaojin.beans.Role;
 
 /**
@@ -26,4 +27,10 @@ public interface IRoleService {
 	 * @param id
 	 */
 	public void deleteRole(Long id);
+	/**
+	 * ²éÑ¯½ÇÉ«
+	 * @param role
+	 * @return
+	 */
+	public Page findRole(Page page);
 }
