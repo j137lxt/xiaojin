@@ -8,4 +8,5 @@ package org.j137.xiaojin.systemmag.service;
  */
 public interface IMenuService {
 
+	
 }
