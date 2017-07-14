@@ -31,4 +31,8 @@ public interface IMenuDao {
 	 * @param menu
 	 */
 	public Page findMenu(Map map);
+	/**
+	 *查询总条目 
+	 */
+	public int findMenuNum();
 }

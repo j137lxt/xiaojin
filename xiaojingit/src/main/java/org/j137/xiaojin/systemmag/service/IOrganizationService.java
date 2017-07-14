@@ -8,7 +8,7 @@ import org.j137.xiaojin.beans.Page;
  * @version 1.0
  * @created 13-7月-2017 11:39:39
  */
-public interface IOrganization {
+public interface IOrganizationService {
 	
 	/**
 	 * 新增一个机构

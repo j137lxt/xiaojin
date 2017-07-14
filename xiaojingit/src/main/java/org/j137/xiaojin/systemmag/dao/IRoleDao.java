@@ -29,4 +29,8 @@ public interface IRoleDao {
 	 * @return
 	 */
 	public Page findRole(Map map);
+	/**
+	 *查询总条目 
+	 */
+	public int findMenuNum();
 }

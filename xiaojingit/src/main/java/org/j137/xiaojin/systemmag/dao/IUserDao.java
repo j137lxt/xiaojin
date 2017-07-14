@@ -26,4 +26,8 @@ public interface IUserDao {
 		 * @param user
 		 */
 		public Page findAllUser(Map map);
+		/**
+		 *查询总条目 
+		 */
+		public int findMenuNum();
 }

@@ -1,9 +1,10 @@
 package org.j137.xiaojin.systemmag.service;
 
+import java.util.Map;
+
 import org.j137.xiaojin.beans.Menu;
 import org.j137.xiaojin.beans.Page;
 
-import com.sun.javafx.collections.MappingChange.Map;
 
 /**
  * @author Administrator

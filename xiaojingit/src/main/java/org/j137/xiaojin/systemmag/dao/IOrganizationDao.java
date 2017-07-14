@@ -28,4 +28,8 @@ public interface IOrganizationDao {
 	 * @return
 	 */
 	public Page findAllOrg(Page page);
+	/**
+	 *查询总条目 
+	 */
+	public int findMenuNum();
 }
