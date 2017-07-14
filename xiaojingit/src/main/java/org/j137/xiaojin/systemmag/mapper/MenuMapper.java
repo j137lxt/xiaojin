@@ -1,16 +1,12 @@
-package org.j137.xiaojin.systemmag.service;
+package org.j137.xiaojin.systemmag.mapper;
+
+import java.util.Map;
 
 import org.j137.xiaojin.beans.Menu;
 import org.j137.xiaojin.beans.Page;
 
-import com.sun.javafx.collections.MappingChange.Map;
+public interface MenuMapper {
 
-/**
- * @author Administrator
- * @version 1.0
- * @created 13-7月-2017 11:39:39
- */
-public interface IMenuService {
 	/**
 	 * 保存菜单 
 	 * @param menu
@@ -30,11 +26,5 @@ public interface IMenuService {
 	 * 查询菜单 
 	 * @param menu
 	 */
-	public Page findMenu(Page page);
-	/**
-	 * 条件查询菜单
-	 * @param map
-	 * @return
-	 */
-	public Page findMenuByItem(Map map);
+	public Page findMenu(Map map);
 }

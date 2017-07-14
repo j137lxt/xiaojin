@@ -1,5 +1,7 @@
 package org.j137.xiaojin.systemmag.dao;
 
+import java.util.Map;
+
 import org.j137.xiaojin.beans.Menu;
 import org.j137.xiaojin.beans.Page;
 
@@ -28,5 +30,5 @@ public interface IMenuDao {
 	 * ≤È—Ø≤Àµ• 
 	 * @param menu
 	 */
-	public Page findMenu(Page page);
+	public Page findMenu(Map map);
 }

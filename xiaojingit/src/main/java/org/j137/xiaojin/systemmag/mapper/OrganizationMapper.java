@@ -1,5 +1,6 @@
-package org.j137.xiaojin.systemmag.service;
+package org.j137.xiaojin.systemmag.mapper;
 
+import org.apache.ibatis.annotations.Insert;
 import org.j137.xiaojin.beans.Organization;
 import org.j137.xiaojin.beans.Page;
 
@@ -8,12 +9,12 @@ import org.j137.xiaojin.beans.Page;
  * @version 1.0
  * @created 13-7月-2017 11:39:39
  */
-public interface IOrganization {
-	
+public interface OrganizationMapper {
 	/**
 	 * 新增一个机构
 	 * @param org
 	 */
+	
 	public void saveOrg(Organization org);
 	
 	/**
@@ -34,5 +35,4 @@ public interface IOrganization {
 	 * @return
 	 */
 	public Page findAllOrg(Page page);
-	
 }

@@ -1,11 +1,11 @@
-package org.j137.xiaojin.systemmag.dao;
+package org.j137.xiaojin.systemmag.mapper;
 
 import java.util.Map;
 
 import org.j137.xiaojin.beans.Page;
 import org.j137.xiaojin.beans.User;
 
-public interface IUserDao {
+public interface UserMapper {
 	/**
 	 * ±£¥Ê”√ªß
 	 * @param user
