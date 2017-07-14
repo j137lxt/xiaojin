@@ -15,15 +15,15 @@ public interface INperDao {
 	 * @param map
 	 * @return
 	 */
-	public int updateNper(Map map);
+	public int updateNper(Nper bean);
 	
-	public Nper getByid(int id);
+	public Nper getByid(Long id);
 	/**
 	 * 这里的id是产品的  根据产品id、叉出他的期数集合
 	 *
 	 * @param id
 	 * @return
 	 */
-	public  List<Nper> getPridListNper(int id);
+	public  List<Nper> getPridListNper(Long id);
 
 }
