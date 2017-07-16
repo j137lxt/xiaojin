@@ -1,5 +1,6 @@
 package org.j137.xiaojin.systemmag.dao.impl;
 
+import java.util.List;
 import java.util.Map;
 
 import javax.annotation.Resource;
@@ -34,7 +35,9 @@ public class MenuDaoImpl implements IMenuDao{
 	@Override
 	public Page findMenu(Map map) {
 		// TODO Auto-generated method stub
-		return mm.findMenu(map);
+		Page page=(Page) map.get("page");
+		page.setData(mm.findMenu(map));
+		return page;
 	}
 
 	@Override

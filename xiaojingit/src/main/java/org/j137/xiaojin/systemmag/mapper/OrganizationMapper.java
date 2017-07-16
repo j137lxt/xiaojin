@@ -1,5 +1,7 @@
 package org.j137.xiaojin.systemmag.mapper;
 
+import java.util.List;
+
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.ResultType;
 import org.apache.ibatis.annotations.Select;
@@ -17,7 +19,7 @@ public interface OrganizationMapper {
 	 * 新增一个机构
 	 * @param org
 	 */
-	
+	@Insert("insert into t_organization values(null,#{orgName},#{orgCode},#{grandOrg},#{sort},#{state},#{remark},1)")
 	public void saveOrg(Organization org);
 	
 	/**
@@ -38,12 +40,14 @@ public interface OrganizationMapper {
 	 * @param page
 	 * @return
 	 */
-	public Page findAllOrg(Page page);
+	@ResultType(java.util.List.class)
+	@Select("select id as id,org_name as orgName,org_code as orgCode,grand_org as grandOrg,sort as sort,state as state,remark as remark,exist as exist from t_organization where exist=1")
+	public List findAllOrg(Page page);
 	
 	/**
 	 *查询总条目 
 	 */
 	@ResultType(Integer.class)
-	@Select("select count(id) as num from t_organization")
+	@Select("select count(id) as num from t_organization where exist=1")
 	public int findOrganizationNum();
 }

@@ -32,7 +32,9 @@ public class UserDaoImpl implements IUserDao {
 	@Override
 	public Page findAllUser(Map map) {
 		// TODO Auto-generated method stub
-		return um.findAllUser(map);
+		Page page = (Page) map.get("page");
+		page.setData(um.findAllUser(map));
+		return page;
 	}
 
 	@Override

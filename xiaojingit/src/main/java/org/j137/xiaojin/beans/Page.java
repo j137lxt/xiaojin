@@ -23,4 +23,45 @@ public class Page {
 
 	}
 
+	public List<?> getData() {
+		return data;
+	}
+
+	public void setData(List<?> data) {
+		this.data = data;
+	}
+
+	public int getIndex() {
+		return index;
+	}
+
+	public void setIndex(int index) {
+		this.index = index;
+	}
+
+	public int getPageSize() {
+		return pageSize;
+	}
+
+	public void setPageSize(int pageSize) {
+		this.pageSize = pageSize;
+	}
+
+	public int getTolPage() {
+		return tolPage;
+	}
+
+	public void setTolPage(int tolPage) {
+		this.tolPage = tolPage;
+	}
+
+	public int getTolPoint() {
+		return tolPoint;
+	}
+
+	public void setTolPoint(int tolPoint) {
+		this.tolPoint = tolPoint;
+	}
+
+	
 }

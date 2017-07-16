@@ -31,8 +31,9 @@ public class RoleDaoImpl implements IRoleDao {
 
 	@Override
 	public Page findRole(Map map) {
-		// TODO Auto-generated method stub
-		return rm.findRole(map);
+		Page page=(Page) map.get("page");
+		page.setData(rm.findRole(map));
+		return page;
 	}
 
 	@Override

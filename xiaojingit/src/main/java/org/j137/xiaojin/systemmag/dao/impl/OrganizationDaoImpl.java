@@ -1,5 +1,7 @@
 package org.j137.xiaojin.systemmag.dao.impl;
 
+import java.util.List;
+
 import javax.annotation.Resource;
 
 import org.j137.xiaojin.beans.Organization;
@@ -31,7 +33,10 @@ public class OrganizationDaoImpl implements IOrganizationDao {
 	@Override
 	public Page findAllOrg(Page page) {
 		// TODO Auto-generated method stub
-		return om.findAllOrg(page);
+		
+		List list=om.findAllOrg(page);
+		page.setData(list);
+		return page;
 	}
 
 	@Override

@@ -1,5 +1,6 @@
 package org.j137.xiaojin.systemmag.mapper;
 
+import java.util.List;
 import java.util.Map;
 
 import org.apache.ibatis.annotations.Insert;
@@ -8,7 +9,6 @@ import org.apache.ibatis.annotations.ResultType;
 import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.annotations.Update;
 import org.j137.xiaojin.beans.Menu;
-import org.j137.xiaojin.beans.Page;
 
 public interface MenuMapper {
 
@@ -33,7 +33,7 @@ public interface MenuMapper {
 	 * 查询菜单 
 	 * @param menu
 	 */
-	public Page findMenu(Map map);
+	public List findMenu(Map map);
 	/**
 	 *查询总条目 
 	 */
