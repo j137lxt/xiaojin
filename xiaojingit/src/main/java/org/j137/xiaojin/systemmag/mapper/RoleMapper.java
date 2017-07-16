@@ -29,4 +29,8 @@ public interface RoleMapper {
 	 * @return
 	 */
 	public Page findRole(Map map);
+	/**
+	 *查询总条目 
+	 */
+	public int findRoleNum();
 }

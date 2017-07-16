@@ -32,5 +32,5 @@ public interface IRoleDao {
 	/**
 	 *查询总条目 
 	 */
-	public int findMenuNum();
+	public int findRoleNum();
 }

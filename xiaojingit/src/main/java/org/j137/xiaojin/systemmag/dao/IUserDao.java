@@ -29,5 +29,5 @@ public interface IUserDao {
 		/**
 		 *查询总条目 
 		 */
-		public int findMenuNum();
+		public int findUserNum();
 }

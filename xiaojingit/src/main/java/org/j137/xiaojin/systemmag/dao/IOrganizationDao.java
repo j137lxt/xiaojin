@@ -31,5 +31,5 @@ public interface IOrganizationDao {
 	/**
 	 *查询总条目 
 	 */
-	public int findMenuNum();
+	public int findOrganizationNum();
 }

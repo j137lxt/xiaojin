@@ -2,53 +2,45 @@ package org.j137.xiaojin.systemmag.dao.impl;
 
 import java.util.Map;
 
+import javax.annotation.Resource;
+
 import org.j137.xiaojin.beans.Menu;
 import org.j137.xiaojin.beans.Page;
 import org.j137.xiaojin.systemmag.dao.IMenuDao;
-
-/**
- * @author Administrator
- * @version 1.0
- * @created 13-7ÔÂ-2017 11:39:39
- */
+import org.j137.xiaojin.systemmag.mapper.MenuMapper;
+import org.springframework.stereotype.Repository;
+@Repository
 public class MenuDaoImpl implements IMenuDao{
 
-	public MenuDaoImpl(){
-
-	}
-
-	public void finalize() throws Throwable {
-
-	}
+	@Resource
+	private MenuMapper mm;
 
 	@Override
 	public void saveMenu(Menu menu) {
-		// TODO Auto-generated method stub
-		
+		mm.saveMenu(menu);
 	}
 
 	@Override
 	public void updateMenu(Menu menu) {
-		// TODO Auto-generated method stub
+		mm.updateMenu(menu);
 		
 	}
 
 	@Override
 	public void deleteMenu(Long id) {
-		// TODO Auto-generated method stub
-		
+		mm.deleteMenu(id);
 	}
 
 	@Override
 	public Page findMenu(Map map) {
 		// TODO Auto-generated method stub
-		return null;
+		return mm.findMenu(map);
 	}
 
 	@Override
 	public int findMenuNum() {
 		// TODO Auto-generated method stub
-		return 0;
+		return mm.findMenuNum();
 	}
 
 }

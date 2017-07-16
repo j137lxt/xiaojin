@@ -26,4 +26,8 @@ public interface UserMapper {
 		 * @param user
 		 */
 		public Page findAllUser(Map map);
+		/**
+		 *查询总条目 
+		 */
+		public int findUserNum();
 }

@@ -1,6 +1,9 @@
 package org.j137.xiaojin.systemmag.mapper;
 
 import org.apache.ibatis.annotations.Insert;
+import org.apache.ibatis.annotations.ResultType;
+import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.Update;
 import org.j137.xiaojin.beans.Organization;
 import org.j137.xiaojin.beans.Page;
 
@@ -27,6 +30,7 @@ public interface OrganizationMapper {
 	 * 逻辑删除一个机构
 	 * @param id
 	 */
+	@Update("update t_organization set exist=0 where id=#{id}")
 	public void deleteOrg(Long id);
 	
 	/**
@@ -35,4 +39,11 @@ public interface OrganizationMapper {
 	 * @return
 	 */
 	public Page findAllOrg(Page page);
+	
+	/**
+	 *查询总条目 
+	 */
+	@ResultType(Integer.class)
+	@Select("select count(id) as num from t_organization")
+	public int findOrganizationNum();
 }
