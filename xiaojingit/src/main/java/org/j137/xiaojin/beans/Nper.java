@@ -37,14 +37,9 @@ public class Nper {
 
 	@Override
 	public String toString() {
-		return "Nper [guarantee=" + guarantee + ", id=" + id
-				+ ", insuranceRate=" + insuranceRate + ", lapseRate="
-				+ lapseRate + ", lminoan=" + lminoan + ", maxnoan=" + maxnoan
-				+ ", nper=" + nper + ", platformRate=" + platformRate
-				+ ", productCode=" + productCode + ", refundRate=" + refundRate
-				+ ", serviceRate=" + serviceRate + ", getClass()=" + getClass()
-				+ ", hashCode()=" + hashCode() + ", toString()="
-				+ super.toString() + "]";
+		return "Nper [guarantee=" + guarantee + ", id=" + id + ", insuranceRate=" + insuranceRate + ", lapseRate="
+				+ lapseRate + ", lminoan=" + lminoan + ", maxnoan=" + maxnoan + ", nper=" + nper + ", platformRate="
+				+ platformRate + ", refundRate=" + refundRate + ", serviceRate=" + serviceRate + "]";
 	}
 
 	public String getGuarantee() {
@@ -135,13 +130,12 @@ public class Nper {
 		this.serviceRate = serviceRate;
 	}
 
-	public Nper(String guarantee, long id, String insuranceRate,
+	public Nper(String guarantee,  String insuranceRate,
 			String lapseRate, String lminoan, String maxnoan, String nper,
 			String platformRate, Product productCode, String refundRate,
 			String serviceRate) {
 		super();
 		this.guarantee = guarantee;
-		this.id = id;
 		this.insuranceRate = insuranceRate;
 		this.lapseRate = lapseRate;
 		this.lminoan = lminoan;
