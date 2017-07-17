@@ -19,4 +19,5 @@ public interface StoreAreaMapper {
 	public void findStoreAreaInfo(long id);
 	@Update("update t_storeArea set city=#{storeArea.city},belongDepart=#{storeArea.belongDepart},cityManager=#{storeArea.cityManager},departManager=#{storeArea.departManager},province=#{storeArea.province},sellArea=#{storeArea.sellArea},sellDepart=#{storeArea.sellDepart} where id=#{storeArea.id}")
 	public void updateStoreAreaInfo(@Param("storeArea")StoreArea storeArea);
+
 }
