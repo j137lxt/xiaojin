@@ -18,6 +18,7 @@ public class Menu {
 	private String remark;
 	private int sort;
 	private String state;
+	private String grandMenu;
 
 	public Menu(){
 

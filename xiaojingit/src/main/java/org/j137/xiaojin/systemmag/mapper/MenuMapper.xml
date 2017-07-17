@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.j137.xiaojin.systemmag.mapper.MenuMapper">
+
+	<resultMap type="org.j137.xiaojin.beans.Page" id="menuMap">
+	
+	</resultMap>
+
+
+	<select id="findMenu" parameterType="java.util.Map" resultMap="menuMap">
+		select * from t_menu where exist=1 and
+		<if test="origin != null and origin != ''">
+			origin = #{origin}
+		</if>
+		limit ${page.index},${page.pageSize}
+	</select>
+
+
+	<update id="updateMenu" parameterType="org.j137.xiaojin.beans.Menu">
+		update t_menu
+		<set>
+			<if test="menuName != null and menuName != ''">
+				menuName=#{menuName}
+			</if>
+			<if test="icon != null and icon != ''">
+				icon=#{icon}
+			</if>
+			<if test="link != null and link != ''">
+				link=#{link}
+			</if>
+			<if test="authority != null and authority != ''">
+				authority = #{authority}
+			</if>
+			<if test="origin != null and origin != ''">
+				origin = #{origin}
+			</if>
+			<if test="sort != null and sort != ''">
+				sort=#{sort}
+			</if>
+			<if test="state != null and state != ''">
+				state=#{state}
+			</if>
+			<if test="remark != null and remark != ''">
+				remark=#{remark}
+			</if>
+			<if test="grandMenu != null and grandMenu != ''">
+				grandMenu=#{grandMenu}
+			</if>
+		</set>
+	</update>
+</mapper>

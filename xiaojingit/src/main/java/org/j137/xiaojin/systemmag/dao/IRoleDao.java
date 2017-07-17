@@ -1,5 +1,7 @@
 package org.j137.xiaojin.systemmag.dao;
 
+import java.util.Map;
+
 import org.j137.xiaojin.beans.Page;
 import org.j137.xiaojin.beans.Role;
 
@@ -26,5 +28,9 @@ public interface IRoleDao {
 	 * @param role
 	 * @return
 	 */
-	public Page findRole(Page page);
+	public Page findRole(Map map);
+	/**
+	 *查询总条目 
+	 */
+	public int findRoleNum();
 }

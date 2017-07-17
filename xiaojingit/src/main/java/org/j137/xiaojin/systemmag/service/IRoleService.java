@@ -1,7 +1,10 @@
 package org.j137.xiaojin.systemmag.service;
 
+import java.util.Map;
+
 import org.j137.xiaojin.beans.Page;
 import org.j137.xiaojin.beans.Role;
+
 
 /**
  * @author Administrator
@@ -33,4 +36,10 @@ public interface IRoleService {
 	 * @return
 	 */
 	public Page findRole(Page page);
+	/**
+	 * 条件查询角色
+	 * @param map
+	 * @return
+	 */
+	public Page findRoleByItems(Map map);
 }

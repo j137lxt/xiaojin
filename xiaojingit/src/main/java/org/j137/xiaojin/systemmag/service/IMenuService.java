@@ -1,7 +1,10 @@
 package org.j137.xiaojin.systemmag.service;
 
+import java.util.Map;
+
 import org.j137.xiaojin.beans.Menu;
 import org.j137.xiaojin.beans.Page;
+
 
 /**
  * @author Administrator
@@ -29,4 +32,10 @@ public interface IMenuService {
 	 * @param menu
 	 */
 	public Page findMenu(Page page);
+	/**
+	 * 条件查询菜单
+	 * @param map
+	 * @return
+	 */
+	public Page findMenuByItem(Map map);
 }

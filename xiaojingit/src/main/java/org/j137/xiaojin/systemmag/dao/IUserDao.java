@@ -1,5 +1,7 @@
 package org.j137.xiaojin.systemmag.dao;
 
+import java.util.Map;
+
 import org.j137.xiaojin.beans.Page;
 import org.j137.xiaojin.beans.User;
 
@@ -23,5 +25,9 @@ public interface IUserDao {
 		 * 查询在职用户
 		 * @param user
 		 */
-		public Page findAllUser(Page page);
+		public Page findAllUser(Map map);
+		/**
+		 *查询总条目 
+		 */
+		public int findUserNum();
 }
