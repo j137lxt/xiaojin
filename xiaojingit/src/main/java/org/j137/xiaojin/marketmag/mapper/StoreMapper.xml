@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- namespace 命名空间， -->
+<mapper namespace="org.j137.xiaojin.marketmag.mapper.StoreMapper">
+	<resultMap type="Store" id="storeMap">
+		<id property="id" column="id" javaType="java.lang.Long"/>
+		<result property="storeAccountCode" column="store_accountCode" javaType="java.lang.String"/>
+		<result property="storeAccountType" column="store_accountType" javaType="java.lang.String"/>
+		<result property="storeApplicationTime" column="store_applicationTime" javaType="java.lang.String"/>
+		<result property="storeCautionMoney" column="store_cautionMoney" javaType="java.lang.String"/>
+		<result property="storeCode" column="store_code" javaType="java.lang.Long"/>
+		<result property="storeDealMan" column="store_dealMan" javaType="java.lang.String"/>
+		<result property="storeEmail" column="store_email" javaType="java.lang.String"/>
+		<result property="storeName" column="store_name" javaType="java.lang.String"/>
+		<result property="storePerjuducation" column="store_perjuducation" javaType="java.lang.String"/>
+		<result property="storeProessingTime" column="store_proessingTime" javaType="java.lang.String"/>
+		<result property="storeReasonMark" column="store_reasonMark" javaType="java.lang.String"/>
+		<result property="storeSpecialReason" column="store_specialReason" javaType="java.lang.String"/>
+		<result property="storeStutis" column="store_stutis" javaType="java.lang.String"/>
+		<result property="storeType" column="store_type" javaType="java.lang.String"/>
+		<result property="storeUpdateReason" column="store_updateReason" javaType="java.lang.String"/>
+		<result property="storeUpdateType" column="store_updateType" javaType="java.lang.String"/>
+		<result property="storeWithhold" column="store_withhold" javaType="java.lang.String"/>
+		<result property="stroeActiveTime" column="stroe_activeTime" javaType="java.lang.String"/>
+		<result property="stroeAddress" column="stroe_address" javaType="java.lang.String"/>
+		<result property="stroeContractTime" column="stroe_contractTime" javaType="java.lang.String"/>
+		<result property="stroeSpecialType" column="stroe_specialType" javaType="java.lang.String"/>
+		<result property="stroeWay" column="stroe_way" javaType="java.lang.String"/>
+		
+		
+		<association property="store2" javaType="Store2" column="id" select="org.j137.xiaojin.marketmag.mapper.Store2Mapper.findStore2Info">
+		</association>
+		
+		<association property="storeArea" javaType="StoreArea" column="id" select="org.j137.xiaojin.marketmag.mapper.StoreAreaMapper.findStoreAreaInfo">
+		</association>
+		
+	</resultMap>
+	
+	<select id="findStoreInfo" resultMap="storeMap">	
+	select id as id,store_accountCode as storeAccountCode,store_accountType as storeAccountType,store_applicationTime as storeApplicationTime,
+	store_cautionMoney as storeCautionMoney,store_code as storeCode, store_dealMan as storeDealMan,store_email AS storeEmail,store_name AS storeName,
+	store_perjuducation AS storePerjuducation,store_proessingTime as storeProessingTime,store_reasonMark as storeReasonMark,store_specialReason AS storeSpecialReason,
+	store_stutis AS storeStutis,store_type AS storeType,store_updateReason AS storeUpdateReason,store_updateType AS storeUpdateType,store_withhold AS storeWithhold,
+	stroe_activeTime AS stroeActiveTime,stroe_address AS stroeAddress,stroe_contractTime AS stroeContractTime,stroe_specialType AS stroeSpecialType,
+	stroe_way AS stroeWay from t_store
+	
+	<where>
+	id=#{id}
+	</where>
+	
+	</select>
+
+</mapper>
