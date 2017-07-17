@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="org.j137.xiaojin.systemmag.mapper.MenuMapper">
+<mapper namespace="org.j137.xiaojin.systemmag.mapper.RoleMapper">
 
 	<resultMap type="org.j137.xiaojin.beans.Menu" id="menuMap">
 	<id property="id" column="id" javaType="java.lang.Long"/>
@@ -14,11 +14,12 @@
 	<result property="state" column="state" javaType="java.lang.String"/>
 	<result property="remark" column="remark" javaType="java.lang.String"/>
 	<result property="grandMenu" column="grand_menu" javaType="java.lang.String"/>
+	<association property="organization" column="fk_org_id" fetchType="lazy" select="org.j137.xiaojin.systemmag.mapper.OrganizationMapper.findOrgById"></association>
 	</resultMap>
 
 
-	<select id="findMenu" parameterType="java.util.Map" resultMap="menuMap">
-		select * from t_menu where exist=1 and
+	<select id="findRole" parameterType="java.util.Map" resultMap="menuMap">
+		select * from t_role where exist=1 and
 		<if test="origin != null and origin != ''">
 			origin = #{origin}
 		</if>
@@ -26,7 +27,7 @@
 	</select>
 
 
-	<update id="updateMenu" parameterType="org.j137.xiaojin.beans.Menu">
+	<update id="updateRole" parameterType="org.j137.xiaojin.beans.Menu">
 		update t_menu
 		<set>
 			<if test="menuName != null and menuName != ''">

@@ -50,4 +50,8 @@ public interface OrganizationMapper {
 	@ResultType(Integer.class)
 	@Select("select count(id) as num from t_organization where exist=1")
 	public int findOrganizationNum();
+	
+	@ResultType(Organization.class)
+	@Select("select id as id,org_name as orgName,org_code as orgCode,grand_org as grandOrg,sort as sort,state as state,remark as remark,exist as exist from t_organization where exist=1 and id=#{id}")
+	public Organization findOrgById(Long id);
 }

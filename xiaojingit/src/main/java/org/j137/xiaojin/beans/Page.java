@@ -31,8 +31,13 @@ public class Page {
 		this.data = data;
 	}
 
+	/**
+	 * 注：返回的是数据库中的起始条目
+	 * @return
+	 */
 	public int getIndex() {
-		return index;
+		
+		return (index-1)*pageSize;
 	}
 
 	public void setIndex(int index) {
