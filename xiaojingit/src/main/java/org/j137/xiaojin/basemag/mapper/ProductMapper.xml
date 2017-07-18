@@ -35,8 +35,8 @@
 			select="org.j137.xiaojin.basemag.mapper.NperMapper.getPridListNper"></association>
 
 
-		<!-- <association property="qishu" column="id" javaType="List" fetchType="lazy" 
-			select="org.j137.xiaojin.basemag.mapper.NperMapper.getPridListNper"></association> -->
+		<association property="qishu" column="id" javaType="List" fetchType="lazy" 
+			select="org.j137.xiaojin.basemag.mapper.NperMapper.getPridListNper"></association>
 
 		<collection property="founder" column="founder"
 			ofType="org.j137.xiaojin.beans.User">
@@ -108,16 +108,23 @@
 
 
 
-
-
-<insert id="add" useGeneratedKeys="true" keyProperty="bean.id">
+ <insert id="add" useGeneratedKeys="true" keyProperty="bean.id">
 INSERT INTO t_product(product_name,minloan,maxloan,Forced_privilege,Compulsory_insurance,Privileged_service,interest_rate,advance_service,Rebates_rate,commission,appcomtype,founder,createrdate,updateman,updatedate,buffer)
-values(#{bean.productName},#{} ,#{},#{},#{},#{},#{},#{},#{},#{},#{},#{},#{},#{},#{},#{},#{},#{},#{},#{}           )
+values(#{bean.productName},#{bean.maxloan} ,#{bean.maxloan},#{bean.forcedPrivilege},#{bean.compulsoryInsurance},#{bean.privilegedService},#{bean.interestRate},
+#{bean.advanceService},#{bean.rebatesRate},#{bean.commission},#{bean.appcomtype},#{bean.founder.id},#{bean.createrdate},#{bean.updateMan.id},#{bean.updatedate},#{bean.buffer})
 
 </insert>
 
 
+<update id="updatebuff">
+UPDATE t_product SET buffer=#{buffer}   WHERE id=#{id}
+</update>
 
+
+
+<update id="update">
+UPDATE t_product SET updateman=#{map.updateid} ,updatedate=CURDATE()   WHERE id=#{map.id}
+</update>
 
 
 

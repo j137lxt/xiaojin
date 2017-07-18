@@ -1,5 +1,7 @@
 package org.j137.xiaojin.basemag.dao;
 
+import java.util.List;
+
 import org.j137.xiaojin.beans.Page;
 import org.j137.xiaojin.beans.Rebates;
 
@@ -12,5 +14,5 @@ public interface IRebatesDao {
 	 * @param bean
 	 * @return
 	 */
-	public Page getlistpage(int id,Page bean);
+	public List<Rebates> getlistpage(int id);
 }

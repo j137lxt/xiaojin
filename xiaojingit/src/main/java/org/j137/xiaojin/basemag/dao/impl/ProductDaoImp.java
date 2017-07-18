@@ -42,7 +42,7 @@ private  ProductMapper mp;
 	@Override
 	public List<Product> getPage4biao(Map map) {
 		// TODO Auto-generated method stub
-		return (List<Product>) mp.getPage4biao(map);
+		return null;
 	}
 
 	@Override

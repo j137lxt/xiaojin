@@ -45,7 +45,7 @@ public class Product {
 	/* 返点率*/
 	private BigDecimal rebatesRate;
 	/*修改时间 */
-	private Date updatedate;
+	private Date updatedate=new Date(System.currentTimeMillis());
 	/* 修改人*/
 	private User updateMan;
 	/*返点对象集合*/
@@ -175,15 +175,15 @@ public class Product {
 	public void setQishu(List<Nper> qishu) {
 		this.qishu = qishu;
 	}
-	public Product(long id, String advanceService, String appcomtype,
+	public Product( String advanceService, String appcomtype,
 			String buffer, BigDecimal commission, long compulsoryInsurance,
 			Date createrdate, long forcedPrivilege, User founder,
 			String interestRate, String maxloan, String minloan,
 			String privilegedService, String productName, String productType,
 			BigDecimal rebatesRate, Date updatedate, User updateMan,
 			List<Rebates> fandian, List<Nper> qishu) {
-		super();
-		this.id = id;
+
+	
 		this.advanceService = advanceService;
 		this.appcomtype = appcomtype;
 		this.buffer = buffer;
