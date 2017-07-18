@@ -14,14 +14,14 @@
 	<result property="state" column="state" javaType="java.lang.String"/>
 	<result property="remark" column="remark" javaType="java.lang.String"/>
 	<result property="grandMenu" column="grand_menu" javaType="java.lang.String"/>
-	<result property="exist" column="exist" javaType="java.lang.integer"/>
+	<result property="exist" column="exist" javaType="java.lang.Integer"/>
 	</resultMap>
 
 
 	<select id="findMenu" parameterType="java.util.Map" resultMap="menuMap">
-		select * from t_menu where exist=1 and
+		select * from t_menu where exist=1
 		<if test="origin != null and origin != ''">
-			origin = #{origin}
+			 and origin = #{origin}
 		</if>
 		limit ${page.index},${page.pageSize}
 	</select>

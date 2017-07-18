@@ -20,19 +20,6 @@
 		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
 	</listener>
 	
-	<!-- 关于处理HTTP请求中文乱码的过滤器-->
-	<filter>
-		<filter-name>characterEncodingFilter</filter-name>
-		<filter-class>org.frame.ssm.filter.EncodingFilter</filter-class>
-		<init-param>
-			<param-name>encoding</param-name>
-			<param-value>UTF-8</param-value>
-		</init-param>
-	</filter>
-	<filter-mapping>
-		<filter-name>characterEncodingFilter</filter-name>
-		<servlet-name>spring</servlet-name>
-	</filter-mapping>
 	
 	<!-- rest架构风格中，form提交时，将POST请求修改为PUT/DELETE -->
 	<filter>

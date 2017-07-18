@@ -19,15 +19,15 @@
 
 
 	<select id="findAllUser" parameterType="java.util.Map" resultMap="UserMap">
-		select * from t_user where exist=1 and
+		select * from t_user where exist=1 
 		<if test="loginName != null and loginName != ''">
-			login_name = #{loginName}
+			and login_name like concat(#{loginName},'%') 
 		</if>
 		<if test="relname != null and relname != ''">
-			relname = #{relname}
+			and relname = #{relname} 
 		</if>
 		<if test="fkOrgId != null and fkOrgId != ''">
-			fk_org_id = #{fkOrgId}
+			and fk_org_id = #{fkOrgId} 
 		</if>
 		limit ${page.index},${page.pageSize}
 	</select>
