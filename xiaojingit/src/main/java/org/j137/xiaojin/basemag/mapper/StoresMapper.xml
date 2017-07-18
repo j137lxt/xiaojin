@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+<mapper namespace="org.j137.xiaojin.basemag.mapper.StoresMapper">
+    
+    <resultMap id="StoreMap" type="Store">
+		<id property="id" column="id" javaType="java.lang.Long" />
+		<result property="storeAccountCode" column="store_accountCode" javaType="java.lang.String"/>
+		<result property="storeAccountType" column="store_accountType" javaType="java.lang.String" />
+		<result property="storeApplicationTime" column="store_applicationTime" javaType="java.util.Date"/>
+		<result property="storeCautionMoney" column="store_cautionMoney" javaType="java.lang.String"/>
+		<result property="storeCode" column="store_code" javaType="java.lang.String"/>
+		<result property="storeDealMan" column="store_dealMan" javaType="java.lang.String"/>
+		<result property="storeEmail" column="store_email" javaType="java.lang.String"/>
+		<result property="storeName" column="store_name" javaType="java.lang.String"/>
+		<result property="storePerjuducation" column="store_perjuducation" javaType="java.lang.String"/>
+		<result property="storeProessingTime" column="store_proessingTime" javaType="java.util.Date"/>
+		<result property="storeReasonMark" column="store_reasonMark" javaType="java.lang.String"/>
+		<result property="storeSpecialReason" column="store_specialReason" javaType="java.lang.String"/>
+		<result property="storeStutis" column="store_stutis" javaType="java.lang.String"/>
+		<result property="storeType" column="store_type" javaType="java.lang.String"/>
+		<result property="storeUpdateReason" column="store_updateReason" javaType="java.lang.String"/>
+		<result property="storeUpdateType" column="store_updateType" javaType="java.lang.String"/>
+		<result property="storeWithhold" column="store_withhold" javaType="java.lang.String"/>
+		<result property="stroeActiveTime" column="stroe_activeTime" javaType="java.lang.String"/>
+		<result property="stroeAddress" column="stroe_address" javaType="java.lang.String"/>
+		<result property="stroeContractTime" column="stroe_contractTime" javaType="java.lang.String"/>
+		<result property="stroeSpecialType" column="stroe_specialType" javaType="java.lang.String"/>
+		<result property="stroeWay" column="stroe_way" javaType="java.lang.String"/>
+		<result property="storeLv" column="store_lv" javaType="java.lang.String"/>
+		<association property="store2" javaType="org.j137.xiaojin.beans.Store2" column="id" select="getStore2ById"></association>
+		<association property="list" javaType="java.util.List" column="id" select="getStoresListByid"></association>
+	</resultMap>
+	
+	
+	<resultMap id="StoresMap" type="Stores">
+		<id property="id" column="id" javaType="java.lang.Long" />
+		<result property="area" column="area" javaType="java.lang.String"/>
+		<result property="city" column="city" javaType="java.lang.String" />
+		<result property="goods" column="goods" javaType="java.lang.String"/>
+		<result property="note" column="note" javaType="java.lang.String"/>
+		<result property="people" column="people" javaType="java.lang.String"/>
+		<result property="phone" column="phone" javaType="java.lang.String"/>
+		<result property="position" column="position" javaType="java.lang.String"/>
+		<result property="province" column="province" javaType="java.lang.String"/>
+		<result property="state" column="state" javaType="java.lang.String"/>
+		<result property="stores_address" column="stores_address" javaType="java.lang.String"/>
+		<result property="stores_area" column="stores_area" javaType="java.lang.String"/>
+		<result property="stores_name" column="stores_name" javaType="java.lang.String"/>
+		<association property="store" javaType="org.j137.xiaojin.beans.Store" column="store_id" select="getStoreById"></association>
+		<association property="salesman" javaType="org.j137.xiaojin.beans.Salesman" column="saleman_id" select="org.j137.xiaojin.basemag.mapper.SalesmanMapper.findSalemanById"></association>
+	</resultMap>
+	
+	<resultMap id="Store2Map" type="Store2">
+		<id property="id" column="id" javaType="java.lang.Long" />
+		<result property="storeApplyType" column="store_applyType" javaType="java.lang.String"/>
+		<result property="storeCommercialCode" column="store_commercialCode" javaType="java.lang.String" />
+		<result property="storeCompetitor" column="store_competitor" javaType="java.lang.String"/>
+		<result property="storeIDCard" column="store_IDCard" javaType="java.lang.String"/>
+		<result property="storeManName" column="store_manName" javaType="java.lang.String"/>
+		<result property="storeManTel" column="store_manTel" javaType="java.lang.String"/>
+		<result property="storeName" column="store_name" javaType="java.lang.String"/>
+		<result property="storeOrgCode" column="store_orgCode" javaType="java.lang.String"/>
+		<result property="storeRemarks" column="store_remarks" javaType="java.lang.String"/>
+		<result property="storeResponsibleMan" column="store_responsibleMan" javaType="java.lang.String"/>
+		<result property="storeResTel" column="store_resTel" javaType="java.lang.String"/>
+		<result property="storeSocietyCode" column="store_societyCode" javaType="java.lang.String"/>
+		<result property="storeTaxAccount" column="store_taxAccount" javaType="java.lang.String"/>
+	</resultMap>
+
+     
+     
+     <select id="getStore2ById" resultMap="Store2Map">
+		select * from t_store2 where id=#{id};
+	</select>
+
+    <select id="getStoreById" resultMap="StoreMap">
+		select * from t_store where id=#{store_id};
+	</select>
+	
+	<select id="getStoresListByid" resultMap="StoresMap">
+		select * from t_stores where store_id=#{id};
+	</select>
+	
+	
+	<select id="findAllStore" resultMap="StoreMap">
+		SELECT * from t_store where id=#{buff} limit ${bean.startPos},${bean.pageSize};
+	</select>
+	
+	
+	
+	<select id="mohuFindStore" resultMap="StoreMap">
+	select * from t_store	
+  <where> 
+    <if test="daima != null">
+         store_code = #{daima}
+    </if> 
+    <if test="mingcheng != null">
+        AND store_name = #{mingcheng}
+    </if>
+    <if test="buff != null">
+        AND store_stutis = #{buff}
+    </if>
+     <if test="fengxiandengji != null">
+        AND store_lv = #{fengxiandengji}
+    </if>
+    <if test="leixing != null">
+        AND stroe_specialType = #{leixing}
+    </if>
+    <if test="startime != null">
+        <![CDATA[
+		and store_applicationTime > #{startime}
+		]]>
+    </if>
+    <if test="endtime != null">
+       <![CDATA[
+		and store_applicationTime < #{endtime}
+		]]>
+    </if>
+    <if test="shenpitime != null">
+       <![CDATA[
+		and store_proessingTime > #{shenpitime}
+		]]>
+    </if>
+    <if test="endshenpitime != null">
+        <![CDATA[
+		and store_proessingTime < #{endshenpitime}
+		]]>
+    </if>
+   </where>
+    limit ${bean.startPos},${bean.pageSize};
+	</select>
+	
+	
+	
+	<select id="findStoresBystoreId" resultMap="StoresMap">
+		select * from t_stores where store_id = #{id};
+	</select>
+	
+
+
+</mapper>
