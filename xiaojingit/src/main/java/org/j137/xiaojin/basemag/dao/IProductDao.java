@@ -1,9 +1,11 @@
 package org.j137.xiaojin.basemag.dao;
 
+import java.util.List;
 import java.util.Map;
 
 import org.j137.xiaojin.beans.Page;
 import org.j137.xiaojin.beans.Product;
+import org.j137.xiaojin.beans.fenyebean;
 
 public interface IProductDao {
 
@@ -13,7 +15,9 @@ public interface IProductDao {
 	 * @param map
 	 * @return
 	 */
-	public  Page getPage(Map map);
+	public   List<Product> getPage(Map map);
+	
+	public int  row(Map map);
 	/**
 	 * map 保护修改对象 和修改人和修改时间
 	 * @param map
@@ -32,9 +36,9 @@ public interface IProductDao {
 	 * @param map
 	 * @return
 	 */
-	public  Page getPage4biao(Map map);
+	public  List<Product> getPage4biao(Map map);
 	
-	public Product getByid();
+	public Product getByid(Long id);
 
 	public  int add(Product bean);
 	

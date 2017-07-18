@@ -46,5 +46,6 @@ public interface NperMapper {
 	public  List<Nper> getPridListNper(@Param("id")Long id);
 	
 	
+	
 
 }

@@ -12,20 +12,20 @@ import java.util.List;
  */
 public class Product {
 
-	
-	private long id;
+
+	private Long id;
 	/*提前结算服务费 */
 	private String advanceService;
 	/* 使用商品类型*/
 	private String appcomtype;
 	/* 审批状态*/
-	private String buffer;
+	private String buffer="未通过";
 	/* 提成系数*/
 	private BigDecimal commission;
 	/* 是否强制保险*/
 	private long compulsoryInsurance;
 	/*创建时间 */
-	private Date createrdate;
+	private Date createrdate=new Date(System.currentTimeMillis());
 	/* 是否强制特权包*/
 	private long forcedPrivilege;
 	/* 创始人*/

@@ -6,6 +6,7 @@ import java.util.Map;
 import org.j137.xiaojin.beans.Page;
 import org.j137.xiaojin.beans.Product;
 import org.j137.xiaojin.beans.User;
+import org.j137.xiaojin.beans.fenyebean;
 
 public interface IProductService {
 	/**
@@ -13,7 +14,7 @@ public interface IProductService {
 	 * @param map
 	 * @return
 	 */
-	public  Page getPage(Map map);
+	public  fenyebean getPage(Map map);
 	/**
 	 * map 保护修改对象 和修改人和修改时间
 	 * @param map
@@ -32,9 +33,9 @@ public interface IProductService {
 	 * @param map
 	 * @return
 	 */
-	public  Page getPage4biao(Map map);
+	public  fenyebean getPage4biao(Map map);
 	
-	public Product getByid();
+	public Product getByid(Long id);
 
 	public  int add(Product bean);
 	

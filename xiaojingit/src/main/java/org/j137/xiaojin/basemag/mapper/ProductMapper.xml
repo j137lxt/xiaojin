@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.j137.xiaojin.basemag.mapper.ProductMapper">
+
+
+	<resultMap type="Product" id="xxx">
+		<id property="id" column="id" javaType="java.lang.Long" />
+		<result property="productType" column="product_type" javaType="java.lang.String" />
+		<result property="productName" column="PRODUCT_NAME" javaType="java.lang.String" />
+		<result property="maxloan" column="MINLOAN" javaType="java.lang.String" />
+		<result property="minloan" column="MAXLOAN" javaType="java.lang.String" />
+		<result property="forcedPrivilege" column="FORCED_PRIVILEGE"
+			javaType="java.lang.Long" />
+		<result property="compulsoryInsurance" column="COMPULSORY_INSURANCE"
+			javaType="java.lang.Long" />
+		<result property="privilegedService" column="PRIVILEGED_SERVICE"
+			javaType="java.lang.String" />
+		<result property="interestRate" column="INTEREST_RATE"
+			javaType="java.lang.String" />
+		<result property="advanceService" column="ADVANCE_SERVICE"
+			javaType="java.lang.String" />
+		<result property="rebatesRate" column="REBATES_RATE" javaType="java.math.BigDecimal" />
+		<result property="commission" column="COMMISSION" javaType="java.math.BigDecimal" />
+		<result property="appcomtype" column="APPCOMTYPE" javaType="java.lang.String" />
+		<result property="updatedate" column="updatedate" javaType="java.util.Date" />
+		<result property="createrdate" column="createrdate" javaType="java.util.Date" />
+		<result property="buffer" column="buffer" javaType="java.lang.String" />
+
+		<association property="updateMan" column="updateman"
+			javaType="User" select="getccc"></association>
+
+		<association property="qishu" column="id" javaType="List"
+			fetchType="lazy"
+			select="org.j137.xiaojin.basemag.mapper.NperMapper.getPridListNper"></association>
+
+
+		<!-- <association property="qishu" column="id" javaType="List" fetchType="lazy" 
+			select="org.j137.xiaojin.basemag.mapper.NperMapper.getPridListNper"></association> -->
+
+		<collection property="founder" column="founder"
+			ofType="org.j137.xiaojin.beans.User">
+			<id property="id" column="id" javaType="java.lang.Long" />
+			<result property="loginName" column="login_name" javaType="java.lang.String" />
+		</collection>
+
+
+	</resultMap>
+
+
+
+
+
+
+	<select id="getByid" resultMap="xxx">
+		SELECT a.*,b.id,b.login_name FROM t_product AS a,t_user AS b WHERE
+		a.founder=b.id and a.id=#{id}
+	</select>
+
+
+	<select id="getccc" resultType="User">
+		SELECT b.id,b.login_name FROM t_product AS a,t_user AS b WHERE
+		a.updateman=b.id AND a.updateman=#{id}
+	</select>
+
+
+
+
+	<select id="getPage" resultMap="xxx">
+
+		SELECT a.*,b.id,b.login_name FROM t_product AS a,t_user AS b WHERE
+		a.updateman=b.id 
+
+		<if test="map.type!=null and  map.type!=''">
+			and a.product_type=#{map.type}
+		</if>
+		<if test="map.code!=null and  map.code!=''">
+			and a.id=#{map.code}
+		</if>
+		<if test="map.name!=null and map.name!=''">
+			and a.product_name like CONCAT(#{map.name},'%')
+		</if>
+		<if test="map.buffer!=null and map.buffer!=''">
+			and a.buffer=#{map.buffer}
+		</if>
+
+		limit #{map.fenyebean.index},#{map.fenyebean.row}
+
+	</select>
+
+
+
+	<select id="row" parameterType="map" resultType="int">
+		SELECT COUNT(a.id) FROM t_product AS a,t_user AS b WHERE
+		a.updateman=b.id
+		<if test="map.code!=null and  map.code!=''">
+			and a.id=#{map.code}
+		</if>
+		<if test="map.name!=null and map.name!=''">
+			and a.product_name like CONCAT(#{map.name},'%')
+		</if>
+		<if test="map.buffer!=null and map.buffer!=''">
+			and a.buffer=#{map.buffer}
+		</if>
+
+		
+	</select>
+
+
+
+
+
+<insert id="add" useGeneratedKeys="true" keyProperty="bean.id">
+INSERT INTO t_product(product_name,minloan,maxloan,Forced_privilege,Compulsory_insurance,Privileged_service,interest_rate,advance_service,Rebates_rate,commission,appcomtype,founder,createrdate,updateman,updatedate,buffer)
+values(#{bean.productName},#{} ,#{},#{},#{},#{},#{},#{},#{},#{},#{},#{},#{},#{},#{},#{},#{},#{},#{},#{}           )
+
+</insert>
+
+
+
+
+
+
+
+</mapper>
