@@ -1,5 +1,6 @@
 package org.j137.xiaojin.marketmag.service.impl;
 
+import java.util.List;
 import java.util.Map;
 
 import javax.annotation.Resource;
@@ -57,6 +58,17 @@ public class StoreServiceImpl implements IStoreService {
 		StoreArea sa=(StoreArea) map.get("33");
 		storeAreaDaoImpl.updateStoreAreaInfo(sa);
 
+	}
+
+	@Override
+	public Page findSroreListByMapToPager(Map map, Page page) {
+		int tolPoint=storeDaoImpl.countStoreListByMapToPager(map);
+		System.out.println("====+++++==="+tolPoint);
+		List<?> datas=storeDaoImpl.findStoreListByMapToPager(map);
+		
+		page.setTolPoint(tolPoint);
+		page.setData(datas);
+		return page;
 	}
 
 }

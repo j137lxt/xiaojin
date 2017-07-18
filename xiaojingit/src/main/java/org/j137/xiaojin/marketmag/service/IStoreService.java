@@ -1,5 +1,6 @@
 package org.j137.xiaojin.marketmag.service;
 
+import java.util.List;
 import java.util.Map;
 
 import org.j137.xiaojin.beans.Page;
@@ -31,4 +32,10 @@ public interface IStoreService {
 	 * @param id
 	 */
 	public void updateStoreInfo(Long id,Map map);
+	/**
+	 * 取出具体需要显示商户的数据
+	 * @param map
+	 * @return
+	 */
+	public Page findSroreListByMapToPager(Map map,Page page);
 }

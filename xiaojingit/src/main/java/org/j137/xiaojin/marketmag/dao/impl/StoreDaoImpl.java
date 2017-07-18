@@ -1,5 +1,8 @@
 package org.j137.xiaojin.marketmag.dao.impl;
 
+import java.util.List;
+import java.util.Map;
+
 import javax.annotation.Resource;
 
 import org.j137.xiaojin.beans.Store;
@@ -30,4 +33,18 @@ public class StoreDaoImpl implements IStoreDao {
 		
 	}
 
+	@Override
+	public int countStoreListByMapToPager(Map map) {
+		// TODO Auto-generated method stub
+		return storeMapper.countStoreListByMapToPager(map);
+	}
+
+	@Override
+	public List<?> findStoreListByMapToPager(Map map) {
+		// TODO Auto-generated method stub
+		
+		return storeMapper.findStoreListByMapToPager(map);
+	}
+
+	
 }

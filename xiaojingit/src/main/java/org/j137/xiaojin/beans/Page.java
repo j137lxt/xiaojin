@@ -10,10 +10,12 @@ import java.util.List;
 public class Page {
 
 	private List<?> data;
+	/**µ±Ç°Ò³Êý*/
 	private int index;
 	private int pageSize;
 	private int tolPage;
 	private int tolPoint;
+
 
 	public Page(){
 
@@ -23,6 +25,7 @@ public class Page {
 
 	}
 
+	
 	public List<?> getData() {
 		return data;
 	}
@@ -32,6 +35,7 @@ public class Page {
 	}
 
 	public int getIndex() {
+		index=(index-1)*pageSize;
 		return index;
 	}
 
@@ -40,6 +44,7 @@ public class Page {
 	}
 
 	public int getPageSize() {
+		
 		return pageSize;
 	}
 
@@ -48,6 +53,7 @@ public class Page {
 	}
 
 	public int getTolPage() {
+		tolPage=tolPoint%pageSize==0?(tolPoint/pageSize):(tolPoint/pageSize+1);
 		return tolPage;
 	}
 
@@ -61,7 +67,15 @@ public class Page {
 
 	public void setTolPoint(int tolPoint) {
 		this.tolPoint = tolPoint;
+		
 	}
 
+	@Override
+	public String toString() {
+		return "Page [data=" + data + ", index=" + index + ", pageSize=" + pageSize + ", tolPage=" + tolPage
+				+ ", tolPoint=" + tolPoint + "]";
+	}
+
+	
 	
 }
