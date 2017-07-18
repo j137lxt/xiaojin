@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+<mapper namespace="org.j137.xiaojin.basemag.mapper.BankMapper">
+     
+     <resultMap id="BankMap" type="Bank">
+		<id property="id" column="id" javaType="java.lang.Long" />
+		<result property="accountType" column="Account_type" javaType="java.lang.String"/>
+		<result property="bankName" column="bank_name" javaType="java.lang.String" />
+		<result property="dobankName" column="dobank_name" javaType="java.lang.String"/>
+		<result property="doTime" column="do_time" javaType="java.util.Date"/>
+		<result property="employeesNumber" column="employees_number" javaType="java.lang.String"/>
+		<result property="employeesUpdate" column="employees_update" javaType="java.lang.String"/>
+		<result property="number" column="number" javaType="java.lang.String"/>
+		<result property="updateTime" column="update_time" javaType="java.util.Date"/>
+		<result property="workName" column="work_name" javaType="java.lang.String"/>
+		<result property="yesNo" column="yes_no" javaType="java.lang.String"/>
+	</resultMap>
+    
+    <select id="getAllBankCount" resultType="long">
+		SELECT COUNT(*) FROM
+		t_bank;
+	</select>
+	
+	<delete id="deleteBank" parameterType="long">
+		DELETE FROM
+		t_bank
+		WHERE ID = #{id}
+	</delete>
+
+    <update id="updateBank" parameterType="Bank">
+		UPDATE t_bank
+		<set>
+			<if test="bank.accountType != null ">Account_type = #{bank.accountType},</if>
+			<if test="bank.bankName != null ">bank_name = #{bank.bankName},</if>
+			<if test="bank.workName != null ">work_name = #{bank.workName},</if>
+			<if test="bank.number != null ">number = #{bank.number},</if>
+			<if test="bank.dobankName != null ">dobank_name = #{bank.dobankName},</if>
+			<if test="bank.yesNo != null ">yes_no = #{bank.yesNo},</if>
+			<if test="bank.updateTime == null ">update_time = now()</if>
+		</set>
+	 WHERE ID = #{Bid}
+	</update>
+	
+	<insert id="addBank" parameterType="Bank">
+		INSERT INTO t_bank
+		(Account_type,bank_name,work_name,number,dobank_name,yes_no)
+		VALUE 
+		(#{accountType},#{bankName},#{workName},#{number},#{dobankName},#{yesNo})
+	</insert>
+	
+    <select id="findAllBank" resultMap="BankMap">
+		SELECT id, bank_name, work_name, number,Account_type,dobank_name,employees_number,do_time,employees_update,update_time,yes_no
+		FROM t_bank;
+	</select>
+
+
+
+
+</mapper>

@@ -1,281 +1,241 @@
 package org.j137.xiaojin.beans;
 
 import java.util.Date;
+import java.util.List;
 
 /**
- * ÉÌ»§
+ * ï¿½Ì»ï¿½
  * @author Administrator
  * @version 1.0
- * @created 13-7ÔÂ-2017 11:39:40
+ * @updated 12-7ï¿½ï¿½-2017 17:29:50
  */
 public class Store {
 
-	/**ÉÌ»§id*/
+	/**ï¿½Ì»ï¿½id*/
 	private Long id;
-	/**½áËã´úÂë*/
+	/**ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½*/
 	private String storeAccountCode;
-	/**ÕË»§ÀàĞÍ*/
+	/**ï¿½Ë»ï¿½ï¿½ï¿½ï¿½ï¿½*/
 	private String storeAccountType;
-	/**ÉêÇëÊ±¼ä*/
 	private Date storeApplicationTime;
-	/**±£Ö¤½ğ*/
 	private String storeCautionMoney;
-	/**ÉÌ»§´úÂë*/
+	/**ï¿½Ì»ï¿½ï¿½ï¿½ï¿½ï¿½*/
 	private Long storeCode;
-	/**³õÉó´¦ÀíÈË*/
+	/**ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½*/
 	private String storeDealMan;
-	/**µç×ÓÓÊÏä*/
+	/**ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½*/
 	private String storeEmail;
-	/**ÉÌ»§Ãû³Æ*/
+	/**ï¿½Ì»ï¿½ï¿½ï¿½ï¿½ï¿½*/
 	private String storeName;
-	/**ÊÇ·ñÔ¤Éó*/
+	/**ï¿½Ç·ï¿½Ô¤ï¿½ï¿½*/
 	private String storePerjuducation;
-	/**ÉóÅúÊ±¼ä*/
 	private Date storeProessingTime;
-	/**Ô­Òò±¸×¢*/
 	private String storeReasonMark;
-	/**ÌØÊâÉêÇëÔ­Òò*/
+	/**ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô­ï¿½ï¿½*/
 	private String storeSpecialReason;
 	/**×´Ì¬*/
 	private String storeStutis;
-	/**ÉÌ»§Àà±ğ*/
+	/**ï¿½Ì»ï¿½ï¿½ï¿½ï¿½*/
 	private String storeType;
-	/**ÉêÇë±ä¸üÔ­Òò*/
+	/**ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô­ï¿½ï¿½*/
 	private String storeUpdateReason;
-	/**ĞŞ¸ÄÀàĞÍ*/
+	/**ï¿½Ş¸ï¿½ï¿½ï¿½ï¿½ï¿½*/
 	private String storeUpdateType;
-	/**ÍË»õÊÇ·ñÔÊĞí¿Û¿î*/
+	/**ï¿½Ë»ï¿½ï¿½Ç·ï¿½ï¿½ï¿½ï¿½ï¿½Û¿ï¿½*/
 	private String storeWithhold;
-	/**¼¤»îÊ±¼ä*/
+	/**ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½*/
 	private Date stroeActiveTime;
-	/**ÉÌ»§µØÖ·*/
+	/**ï¿½Ì»ï¿½ï¿½ï¿½Ö·*/
 	private String stroeAddress;
-	/**Ç©Ô¼Ê±¼ä*/
+	/**Ç©Ô¼Ê±ï¿½ï¿½*/
 	private Date stroeContractTime;
-	/**×¨°¸ÉÌ»§ÀàĞÍ*/
+	/**×¨ï¿½ï¿½ï¿½Ì»ï¿½ï¿½ï¿½ï¿½ï¿½*/
 	private String stroeSpecialType;
-	/**ÇşµÀ*/
+	/**ï¿½ï¿½ï¿½ï¿½*/
 	private String stroeWay;
 
-	/**ÉÌ»§¸½ÊôÊµÌå*/
-	private Store2 store2;
-	/**ÉÌ»§µØÇøÊµÌå*/
+	/**ï¿½Ì»ï¿½ï¿½ï¿½ï¿½ï¿½Êµï¿½ï¿½*/
 	private StoreArea storeArea;
-	/**ÃÅµêÊµÌå*/
+	/**ï¿½Åµï¿½Êµï¿½ï¿½*/
 	private Stores stores;
 	
 
 	public void finalize() throws Throwable {
 }
 
+	private String storeLv;
+    private List<Stores> list;//é—¨åº—é›†åˆ
+    private Store2 store2;  //é—¨åº—2å¯¹è±¡
+
+
 	public Long getId() {
 		return id;
 	}
-
 	public void setId(Long id) {
 		this.id = id;
 	}
-
 	public String getStoreAccountCode() {
 		return storeAccountCode;
 	}
-
 	public void setStoreAccountCode(String storeAccountCode) {
 		this.storeAccountCode = storeAccountCode;
 	}
-
 	public String getStoreAccountType() {
 		return storeAccountType;
 	}
-
 	public void setStoreAccountType(String storeAccountType) {
 		this.storeAccountType = storeAccountType;
 	}
-
 	public Date getStoreApplicationTime() {
 		return storeApplicationTime;
 	}
-
 	public void setStoreApplicationTime(Date storeApplicationTime) {
 		this.storeApplicationTime = storeApplicationTime;
 	}
-
 	public String getStoreCautionMoney() {
 		return storeCautionMoney;
 	}
-
 	public void setStoreCautionMoney(String storeCautionMoney) {
 		this.storeCautionMoney = storeCautionMoney;
 	}
-
 	public Long getStoreCode() {
 		return storeCode;
 	}
-
 	public void setStoreCode(Long storeCode) {
 		this.storeCode = storeCode;
 	}
-
 	public String getStoreDealMan() {
 		return storeDealMan;
 	}
-
 	public void setStoreDealMan(String storeDealMan) {
 		this.storeDealMan = storeDealMan;
 	}
-
 	public String getStoreEmail() {
 		return storeEmail;
 	}
-
 	public void setStoreEmail(String storeEmail) {
 		this.storeEmail = storeEmail;
 	}
-
 	public String getStoreName() {
 		return storeName;
 	}
-
 	public void setStoreName(String storeName) {
 		this.storeName = storeName;
 	}
-
 	public String getStorePerjuducation() {
 		return storePerjuducation;
 	}
-
 	public void setStorePerjuducation(String storePerjuducation) {
 		this.storePerjuducation = storePerjuducation;
 	}
-
 	public Date getStoreProessingTime() {
 		return storeProessingTime;
 	}
-
 	public void setStoreProessingTime(Date storeProessingTime) {
 		this.storeProessingTime = storeProessingTime;
 	}
-
 	public String getStoreReasonMark() {
 		return storeReasonMark;
 	}
-
 	public void setStoreReasonMark(String storeReasonMark) {
 		this.storeReasonMark = storeReasonMark;
 	}
-
 	public String getStoreSpecialReason() {
 		return storeSpecialReason;
 	}
-
 	public void setStoreSpecialReason(String storeSpecialReason) {
 		this.storeSpecialReason = storeSpecialReason;
 	}
-
 	public String getStoreStutis() {
 		return storeStutis;
 	}
-
 	public void setStoreStutis(String storeStutis) {
 		this.storeStutis = storeStutis;
 	}
-
 	public String getStoreType() {
 		return storeType;
 	}
-
 	public void setStoreType(String storeType) {
 		this.storeType = storeType;
 	}
-
 	public String getStoreUpdateReason() {
 		return storeUpdateReason;
 	}
-
 	public void setStoreUpdateReason(String storeUpdateReason) {
 		this.storeUpdateReason = storeUpdateReason;
 	}
-
 	public String getStoreUpdateType() {
 		return storeUpdateType;
 	}
-
 	public void setStoreUpdateType(String storeUpdateType) {
 		this.storeUpdateType = storeUpdateType;
 	}
-
 	public String getStoreWithhold() {
 		return storeWithhold;
 	}
-
 	public void setStoreWithhold(String storeWithhold) {
 		this.storeWithhold = storeWithhold;
 	}
-
 	public Date getStroeActiveTime() {
 		return stroeActiveTime;
 	}
-
 	public void setStroeActiveTime(Date stroeActiveTime) {
 		this.stroeActiveTime = stroeActiveTime;
 	}
-
 	public String getStroeAddress() {
 		return stroeAddress;
 	}
-
 	public void setStroeAddress(String stroeAddress) {
 		this.stroeAddress = stroeAddress;
 	}
-
 	public Date getStroeContractTime() {
 		return stroeContractTime;
 	}
-
 	public void setStroeContractTime(Date stroeContractTime) {
 		this.stroeContractTime = stroeContractTime;
 	}
-
 	public String getStroeSpecialType() {
 		return stroeSpecialType;
 	}
-
 	public void setStroeSpecialType(String stroeSpecialType) {
 		this.stroeSpecialType = stroeSpecialType;
 	}
-
 	public String getStroeWay() {
 		return stroeWay;
 	}
-
 	public void setStroeWay(String stroeWay) {
 		this.stroeWay = stroeWay;
 	}
-
-	public Store2 getStore2() {
-		return store2;
-	}
-
-	public void setStore2(Store2 store2) {
-		this.store2 = store2;
-	}
-
 	public StoreArea getStoreArea() {
 		return storeArea;
 	}
-
 	public void setStoreArea(StoreArea storeArea) {
 		this.storeArea = storeArea;
 	}
-
 	public Stores getStores() {
 		return stores;
 	}
-
 	public void setStores(Stores stores) {
 		this.stores = stores;
 	}
-
+	public String getStoreLv() {
+		return storeLv;
+	}
+	public void setStoreLv(String storeLv) {
+		this.storeLv = storeLv;
+	}
+	public List<Stores> getList() {
+		return list;
+	}
+	public void setList(List<Stores> list) {
+		this.list = list;
+	}
+	public Store2 getStore2() {
+		return store2;
+	}
+	public void setStore2(Store2 store2) {
+		this.store2 = store2;
+	}
 	@Override
 	public String toString() {
 		return "Store [id=" + id + ", storeAccountCode=" + storeAccountCode + ", storeAccountType=" + storeAccountType
@@ -287,82 +247,13 @@ public class Store {
 				+ ", storeUpdateReason=" + storeUpdateReason + ", storeUpdateType=" + storeUpdateType
 				+ ", storeWithhold=" + storeWithhold + ", stroeActiveTime=" + stroeActiveTime + ", stroeAddress="
 				+ stroeAddress + ", stroeContractTime=" + stroeContractTime + ", stroeSpecialType=" + stroeSpecialType
-				+ ", stroeWay=" + stroeWay + ", store2=" + store2 + ", storeArea=" + storeArea + ", stores=" + stores
-				+ "]";
+				+ ", stroeWay=" + stroeWay + ", storeArea=" + storeArea + ", stores=" + stores + ", storeLv=" + storeLv
+				+ ", list=" + list + ", store2=" + store2 + "]";
 	}
-
 	public Store() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-
-	public Store(String storeAccountCode, String storeAccountType, Date storeApplicationTime,
-			String storeCautionMoney, Long storeCode, String storeDealMan, String storeEmail, String storeName,
-			String storePerjuducation, Date storeProessingTime, String storeReasonMark, String storeSpecialReason,
-			String storeStutis, String storeType, String storeUpdateReason, String storeUpdateType,
-			String storeWithhold, Date stroeActiveTime, String stroeAddress, Date stroeContractTime,
-			String stroeSpecialType, String stroeWay) {
-		super();
-		this.storeAccountCode = storeAccountCode;
-		this.storeAccountType = storeAccountType;
-		this.storeApplicationTime = storeApplicationTime;
-		this.storeCautionMoney = storeCautionMoney;
-		this.storeCode = storeCode;
-		this.storeDealMan = storeDealMan;
-		this.storeEmail = storeEmail;
-		this.storeName = storeName;
-		this.storePerjuducation = storePerjuducation;
-		this.storeProessingTime = storeProessingTime;
-		this.storeReasonMark = storeReasonMark;
-		this.storeSpecialReason = storeSpecialReason;
-		this.storeStutis = storeStutis;
-		this.storeType = storeType;
-		this.storeUpdateReason = storeUpdateReason;
-		this.storeUpdateType = storeUpdateType;
-		this.storeWithhold = storeWithhold;
-		this.stroeActiveTime = stroeActiveTime;
-		this.stroeAddress = stroeAddress;
-		this.stroeContractTime = stroeContractTime;
-		this.stroeSpecialType = stroeSpecialType;
-		this.stroeWay = stroeWay;
-	}
-
-	public Store(String storeAccountCode, String storeAccountType, Date storeApplicationTime,
-			String storeCautionMoney, Long storeCode, String storeDealMan, String storeEmail, String storeName,
-			String storePerjuducation, Date storeProessingTime, String storeReasonMark, String storeSpecialReason,
-			String storeStutis, String storeType, String storeUpdateReason, String storeUpdateType,
-			String storeWithhold, Date stroeActiveTime, String stroeAddress, Date stroeContractTime,
-			String stroeSpecialType, String stroeWay, Store2 store2, StoreArea storeArea, Stores stores) {
-		super();
-		this.storeAccountCode = storeAccountCode;
-		this.storeAccountType = storeAccountType;
-		this.storeApplicationTime = storeApplicationTime;
-		this.storeCautionMoney = storeCautionMoney;
-		this.storeCode = storeCode;
-		this.storeDealMan = storeDealMan;
-		this.storeEmail = storeEmail;
-		this.storeName = storeName;
-		this.storePerjuducation = storePerjuducation;
-		this.storeProessingTime = storeProessingTime;
-		this.storeReasonMark = storeReasonMark;
-		this.storeSpecialReason = storeSpecialReason;
-		this.storeStutis = storeStutis;
-		this.storeType = storeType;
-		this.storeUpdateReason = storeUpdateReason;
-		this.storeUpdateType = storeUpdateType;
-		this.storeWithhold = storeWithhold;
-		this.stroeActiveTime = stroeActiveTime;
-		this.stroeAddress = stroeAddress;
-		this.stroeContractTime = stroeContractTime;
-		this.stroeSpecialType = stroeSpecialType;
-		this.stroeWay = stroeWay;
-		this.store2 = store2;
-		this.storeArea = storeArea;
-		this.stores = stores;
-	}
-
-	
-	
-	
-
+    
+    
 }

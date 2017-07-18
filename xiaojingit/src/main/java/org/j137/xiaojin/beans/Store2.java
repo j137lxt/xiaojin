@@ -2,44 +2,44 @@ package org.j137.xiaojin.beans;
 
 
 /**
- * ÉÌ»§¸½±í
+ * ï¿½Ì»ï¿½ï¿½ï¿½ï¿½ï¿½
  * @author Administrator
  * @version 1.0
- * @created 13-7ÔÂ-2017 11:39:40
+ * @created 13-7ï¿½ï¿½-2017 11:39:40
  */
 public class Store2 {
 
-	/**ÉÌ»§id*/
+	/**ï¿½Ì»ï¿½id*/
 	private Long id;
-	/**ÉêÇëÀàÐÍ*/
+	/**ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½*/
 	private String storeApplyType;
-	/**ÓªÒµÖ´ÕÕ±àÂë*/
+	/**ÓªÒµÖ´ï¿½Õ±ï¿½ï¿½ï¿½*/
 	private String storeCommercialCode;
-	/**Í¬ÐÐÒµ¾ºÕùÕß*/
+	/**Í¬ï¿½ï¿½Òµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½*/
 	private String storeCompetitor;
-	/**·¨ÈËÉí·ÝÖ¤ºÅ*/
+	/**ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö¤ï¿½ï¿½*/
 	private String storeIDCard;
-	/**·¨ÈËÐÕÃû*/
+	/**ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½*/
 	private String storeManName;
-	/**·¨ÈËµç»°ºÅÂë*/
+	/**ï¿½ï¿½ï¿½Ëµç»°ï¿½ï¿½ï¿½ï¿½*/
 	private String storeManTel;
-	/**ÉÌ»§Ãû³Æ*/
+	/**ï¿½Ì»ï¿½ï¿½ï¿½ï¿½ï¿½*/
 	private String storeName;
-	/**×éÖ¯»ú¹¹´úÂëÖ¤ºÅ*/
+	/**ï¿½ï¿½Ö¯ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö¤ï¿½ï¿½*/
 	private String storeOrgCode;
-	/**±¸×¢*/
+	/**ï¿½ï¿½×¢*/
 	private String storeRemarks;
-	/**¸ºÔðÈË*/
+	/**ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½*/
 	private String storeResponsibleMan;
-	/**¸ºÔðÈËÊÖ»úºÅ*/
+	/**ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö»ï¿½ï¿½ï¿½*/
 	private String storeResTel;
-	/**Éç»áÐÅÓÃÍ³Ò»±àÂë*/
+	/**ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Í³Ò»ï¿½ï¿½ï¿½ï¿½*/
 	private String storeSocietyCode;
-	/**Ë°ÎñµÇ¼ÇÕËºÅ*/
+	/**Ë°ï¿½ï¿½Ç¼ï¿½ï¿½Ëºï¿½*/
 	private String storeTaxAccount;
-	/**Êµ¼ÊÊÕ¿îÈÏÐÕÃû*/
+	/**Êµï¿½ï¿½ï¿½Õ¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½*/
 	private String storeShijiName;
-	/**Êµ¼ÊÊÕ¿îÈËµç»°*/
+	/**Êµï¿½ï¿½ï¿½Õ¿ï¿½ï¿½Ëµç»°*/
 	private String storeShijiTel;
 	
 
@@ -66,142 +66,198 @@ public class Store2 {
 		this.storeShijiTel = storeShijiTel;
 	}
 
-	public Store2() {
-		super();
-		// TODO Auto-generated constructor stub
-	}
 
-	public void finalize() throws Throwable {
-
-	}
 
 	public Long getId() {
 		return id;
 	}
 
+
+
 	public void setId(Long id) {
 		this.id = id;
 	}
+
+
 
 	public String getStoreApplyType() {
 		return storeApplyType;
 	}
 
+
+
 	public void setStoreApplyType(String storeApplyType) {
 		this.storeApplyType = storeApplyType;
 	}
+
+
 
 	public String getStoreCommercialCode() {
 		return storeCommercialCode;
 	}
 
+
+
 	public void setStoreCommercialCode(String storeCommercialCode) {
 		this.storeCommercialCode = storeCommercialCode;
 	}
+
+
 
 	public String getStoreCompetitor() {
 		return storeCompetitor;
 	}
 
+
+
 	public void setStoreCompetitor(String storeCompetitor) {
 		this.storeCompetitor = storeCompetitor;
 	}
+
+
 
 	public String getStoreIDCard() {
 		return storeIDCard;
 	}
 
+
+
 	public void setStoreIDCard(String storeIDCard) {
 		this.storeIDCard = storeIDCard;
 	}
+
+
 
 	public String getStoreManName() {
 		return storeManName;
 	}
 
+
+
 	public void setStoreManName(String storeManName) {
 		this.storeManName = storeManName;
 	}
+
+
 
 	public String getStoreManTel() {
 		return storeManTel;
 	}
 
+
+
 	public void setStoreManTel(String storeManTel) {
 		this.storeManTel = storeManTel;
 	}
+
+
 
 	public String getStoreName() {
 		return storeName;
 	}
 
+
+
 	public void setStoreName(String storeName) {
 		this.storeName = storeName;
 	}
+
+
 
 	public String getStoreOrgCode() {
 		return storeOrgCode;
 	}
 
+
+
 	public void setStoreOrgCode(String storeOrgCode) {
 		this.storeOrgCode = storeOrgCode;
 	}
+
+
 
 	public String getStoreRemarks() {
 		return storeRemarks;
 	}
 
+
+
 	public void setStoreRemarks(String storeRemarks) {
 		this.storeRemarks = storeRemarks;
 	}
+
+
 
 	public String getStoreResponsibleMan() {
 		return storeResponsibleMan;
 	}
 
+
+
 	public void setStoreResponsibleMan(String storeResponsibleMan) {
 		this.storeResponsibleMan = storeResponsibleMan;
 	}
+
+
 
 	public String getStoreResTel() {
 		return storeResTel;
 	}
 
+
+
 	public void setStoreResTel(String storeResTel) {
 		this.storeResTel = storeResTel;
 	}
+
+
 
 	public String getStoreSocietyCode() {
 		return storeSocietyCode;
 	}
 
+
+
 	public void setStoreSocietyCode(String storeSocietyCode) {
 		this.storeSocietyCode = storeSocietyCode;
 	}
+
+
 
 	public String getStoreTaxAccount() {
 		return storeTaxAccount;
 	}
 
+
+
 	public void setStoreTaxAccount(String storeTaxAccount) {
 		this.storeTaxAccount = storeTaxAccount;
 	}
+
+
 
 	public String getStoreShijiName() {
 		return storeShijiName;
 	}
 
+
+
 	public void setStoreShijiName(String storeShijiName) {
 		this.storeShijiName = storeShijiName;
 	}
+
+
 
 	public String getStoreShijiTel() {
 		return storeShijiTel;
 	}
 
+
+
 	public void setStoreShijiTel(String storeShijiTel) {
 		this.storeShijiTel = storeShijiTel;
 	}
+
 
 
 	@Override
@@ -215,6 +271,11 @@ public class Store2 {
 				+ storeShijiTel + "]";
 	}
 
-	
+
+
+	public Store2() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
 
 }

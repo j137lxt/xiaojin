@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="org.j137.xiaojin.basemag.mapper.SalesmanMapper">
+
+<resultMap id="SalesmanMap" type="Salesman">
+		<id property="id" column="id" javaType="java.lang.Long" />
+		<result property="employeesid" column="employeesid" javaType="java.lang.String"/>
+		<result property="employeesstate" column="employeesstate" javaType="java.lang.String" />
+		<result property="saleid" column="saleid" javaType="java.lang.String"/>
+		<result property="salename" column="salename" javaType="java.lang.String"/>
+		<result property="salephone" column="salephone" javaType="java.lang.String"/>
+		<result property="salestate" column="salestate" javaType="java.lang.String"/>
+		<association property="organizationName" javaType="java.lang.String" column="organization_id" select="getorganizationNameByorganizationId"></association>
+</resultMap>
+
+    
+    <select id="getAllUserCount" resultType="long">
+		SELECT COUNT(*) FROM
+		t_salesman;
+	</select>
+     
+     <select id="findAllSalesman" resultMap="SalesmanMap">
+		SELECT id,
+		saleid, employeesid, salename, salephone,salestate,employeesstate,organization_id
+		FROM t_salesman where employeesstate=#{buff} limit ${bean.startPos},
+		${bean.pageSize};
+	</select>
+
+    <select id="getorganizationNameByorganizationId" resultType="java.lang.String">
+		select org_name from t_organization where id=#{organization_id}
+	</select>
+	
+	
+	
+	
+
+   <select id="findAllSaleManByNameandOrganizationId" resultMap="SalesmanMap">
+	SELECT employeesid,salename,organization_id FROM t_salesman  
+   <where> 
+    <if test="salename != null">
+         salename = #{salename}
+    </if> 
+    <if test="organization_id != null">
+        AND organization_id = #{organization_id}
+    </if>
+   </where>
+    limit ${bean.startPos},${bean.pageSize};
+	</select>
+	
+	
+	
+	
+	
+	
+	
+	
+	<select id="findAllsalesmanBysaleidAndemployeesid" resultMap="SalesmanMap">
+	SELECT id,saleid, employeesid, salename, salephone,salestate,employeesstate,organization_id FROM t_salesman	
+  <where> 
+    <if test="saleid != null">
+         saleid = #{saleid}
+    </if> 
+    <if test="employeesid != null">
+        AND employeesid = #{employeesid}
+    </if>
+    <if test="salestate != null">
+        AND salestate = #{salestate}
+    </if>
+     <if test="employeesstate != null">
+        AND employeesstate = #{employeesstate}
+    </if>
+   </where>
+    limit ${bean.startPos},${bean.pageSize};
+	</select>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<select id="findSalemanById" resultMap="SalesmanMap">
+		SELECT id,employeesid,
+		saleid, salename, salestate, salephone
+		FROM t_salesman where id=#{saleman_id};
+	</select>
+	
+
+</mapper>
