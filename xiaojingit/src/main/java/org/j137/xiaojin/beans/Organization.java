@@ -9,7 +9,7 @@ package org.j137.xiaojin.beans;
  */
 public class Organization {
 
-	private boolean exist;
+	private Integer exist;
 	private String grandOrg;
 	private Long id;
 	private String orgCode;

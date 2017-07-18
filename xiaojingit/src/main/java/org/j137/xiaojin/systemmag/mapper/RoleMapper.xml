@@ -3,59 +3,52 @@
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="org.j137.xiaojin.systemmag.mapper.RoleMapper">
 
-	<resultMap type="org.j137.xiaojin.beans.Menu" id="menuMap">
+	<resultMap type="org.j137.xiaojin.beans.Role" id="roleMap">
 	<id property="id" column="id" javaType="java.lang.Long"/>
-	<result property="menuName" column="menu_name" javaType="java.lang.String"/>
-	<result property="icon" column="icon" javaType="java.lang.String"/>
-	<result property="link" column="link" javaType="java.lang.String"/>
-	<result property="authority" column="authority" javaType="java.lang.String"/>
-	<result property="origin" column="origin" javaType="java.lang.String"/>
-	<result property="sort" column="sort" javaType="java.lang.Integer"/>
+	<result property="roleName" column="role_name" javaType="java.lang.String"/>
+	<result property="roleCode" column="role_code" javaType="java.lang.String"/>
 	<result property="state" column="state" javaType="java.lang.String"/>
-	<result property="remark" column="remark" javaType="java.lang.String"/>
-	<result property="grandMenu" column="grand_menu" javaType="java.lang.String"/>
+	<result property="roleType" column="roleType" javaType="java.lang.String"/>
+	<result property="exist" column="exist" javaType="java.lang.integer"/>
 	<association property="organization" column="fk_org_id" fetchType="lazy" select="org.j137.xiaojin.systemmag.mapper.OrganizationMapper.findOrgById"></association>
 	</resultMap>
 
 
-	<select id="findRole" parameterType="java.util.Map" resultMap="menuMap">
+	<select id="findRole" parameterType="java.util.Map" resultMap="roleMap">
 		select * from t_role where exist=1 and
-		<if test="origin != null and origin != ''">
-			origin = #{origin}
+		<if test="userNameOrCode != null and userNameOrCode != ''">
+			userNameOrCode like concat(#{userNameOrCode},'%')
+		</if>
+		<if test="fkOrgId != null and fkOrgId != ''">
+			fk_org_id = #{fkOrgId}
+		</if>
+		<if test="roleType != null and roleType!= ''">
+			role_type=#{roleType}
 		</if>
 		limit ${page.index},${page.pageSize}
 	</select>
 
 
-	<update id="updateRole" parameterType="org.j137.xiaojin.beans.Menu">
-		update t_menu
+	<update id="updateRole" parameterType="org.j137.xiaojin.beans.role">
+		update t_role
 		<set>
-			<if test="menuName != null and menuName != ''">
-				menuName=#{menuName}
+			<if test="roleName != null and roleName != ''">
+				roleName=#{roleName},
 			</if>
-			<if test="icon != null and icon != ''">
-				icon=#{icon}
+			<if test="roleType != null and roleType != ''">
+				roleType=#{roleType},
 			</if>
-			<if test="link != null and link != ''">
-				link=#{link}
-			</if>
-			<if test="authority != null and authority != ''">
-				authority = #{authority}
-			</if>
-			<if test="origin != null and origin != ''">
-				origin = #{origin}
-			</if>
-			<if test="sort != null and sort != ''">
-				sort=#{sort}
+			<if test="roleCode != null and roleCode != ''">
+				roleCode=#{roleCode},
 			</if>
 			<if test="state != null and state != ''">
-				state=#{state}
+				state = #{state},
 			</if>
-			<if test="remark != null and remark != ''">
-				remark=#{remark}
+			<if test="exist != null and exist != ''">
+				exist = #{exist},
 			</if>
-			<if test="grandMenu != null and grandMenu != ''">
-				grandMenu=#{grandMenu}
+			<if test="fkOrgId != null and fkOrgId != ''">
+				fk_org_id = #{fkOrgId}
 			</if>
 		</set>
 	</update>

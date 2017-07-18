@@ -19,6 +19,7 @@ public class Menu {
 	private int sort;
 	private String state;
 	private String grandMenu;
+	private Integer exist;
 
 	public Menu(){
 

@@ -9,25 +9,25 @@
 		update t_organization
 		<set>
 			<if test="orgName != null and orgName != ''">
-				orgName=#{orgName}
+				orgName=#{orgName},
 			</if>
 			<if test="orgCode != null and orgCode != ''">
-				orgCode=#{orgCode}
+				orgCode=#{orgCode},
 			</if>
 			<if test="grandOrg != null and grandOrg != ''">
-				grandOrg=#{grandOrg}
+				grandOrg=#{grandOrg},
 			</if>
 			<if test="sort != null and sort != ''">
-				sort = #{sort}
+				sort = #{sort},
 			</if>
 			<if test="origin != null and origin != ''">
-				origin = #{origin}
+				origin = #{origin},
 			</if>
 			<if test="sort != null and sort != ''">
-				sort=#{sort}
+				sort=#{sort},
 			</if>
 			<if test="state != null and state != ''">
-				state=#{state}
+				state=#{state},
 			</if>
 			<if test="remark != null and remark != ''">
 				remark=#{remark}

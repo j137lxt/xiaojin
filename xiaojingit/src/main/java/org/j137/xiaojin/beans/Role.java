@@ -9,7 +9,7 @@ package org.j137.xiaojin.beans;
  */
 public class Role {
 
-	private boolean exist;
+	private Integer exist;
 	private Long id;
 	private Organization organization;
 	private String roleCode;

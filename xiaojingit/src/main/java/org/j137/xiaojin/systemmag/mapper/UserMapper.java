@@ -16,7 +16,7 @@ public interface UserMapper {
 	 * 保存用户
 	 * @param user
 	 */
-	@Insert("insert into t_user values(null,#{user.organization.id},#{user.userCode},#{user.loginName},#{user.relname},#{user.phone},#{user.idCard},#{user.email},#{user.state},1)")
+	@Insert("insert into t_user values(null,#{user.organization.id},#{user.userCode},#{user.loginName},#{user.relname},#{user.phone},#{user.idCard},#{user.email},#{user.state},1,#{user.genner},#{user.userType})")
 		public void saveUser(@Param("user")User user);
 		/**
 		 * 修改用户
@@ -40,4 +40,6 @@ public interface UserMapper {
 		@ResultType(Integer.class)
 		@Select("select count(id) as num from t_user where exist=1")
 		public int findUserNum();
+		
+		public User findUserById(Long id);
 }

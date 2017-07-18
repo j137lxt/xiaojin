@@ -18,6 +18,9 @@ public class User {
 	private String relname;
 	private String state;
 	private String userCode;
+	private Integer exist;
+	private String genner;
+	private String userType;
 
 	public User(){
 
