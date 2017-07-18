@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- namespace 命名空间， -->
+<mapper namespace="org.j137.xiaojin.sellmag.mapper.BindApplyMapper">
+	<resultMap type="Salesman" id="salesmanMap">
+		<id property="id" column="id" javaType="java.lang.Long"/>
+		<result property="saleid" column="saleid" javaType="java.lang.String"/>
+		<result property="salename" column="salename" javaType="java.lang.String"/>
+		<result property="salephone" column="salephone" javaType="java.lang.String"/>
+		<result property="salestate" column="salestate" javaType="java.lang.String"/>
+		<result property="employeesstate" column="employeesstate" javaType="java.lang.String"/>
+	</resultMap>
+	
+	<select id="countSaleManListByMapToPager" resultType="int">
+		select count(id) from t_salesman
+		<include refid="commonSql"></include>
+	</select>
+	
+	<select id="findSaleManListByMapToPager" resultMap="salesmanMap">
+		select * from t_salesman 
+		<include refid="commonSql"></include>
+		order by id desc limit #{map.index},#{map.pageSize}
+	</select>
+	
+	
+	
+	<sql id="commonSql">
+		<where>
+			<if test="map.saleid != null">
+				and saleid = #{map.saleid}
+			</if>
+			<if test="map.salename != null">
+				and salename like CONCAT(#{map.salename},'%')
+			</if>
+		</where>
+	</sql>
+</mapper>

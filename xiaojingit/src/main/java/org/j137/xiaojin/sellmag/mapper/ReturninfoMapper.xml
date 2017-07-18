@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- namespace 命名空间， -->
+<mapper namespace="org.j137.xiaojin.sellmag.mapper.ReturninfoMapper">
+	<resultMap type="Returninfo" id="returninfoMap">
+		<id property="id" column="id" javaType="java.lang.Long"/>
+		<result property="clientaccount" column="clientaccount" javaType="java.lang.String"/>
+		<result property="clientbank" column="clientbank" javaType="java.lang.String"/>
+		<result property="payment" column="payment" javaType="java.math.BigDecimal"/>
+		<result property="price" column="price" javaType="java.math.BigDecimal"/>
+		<result property="shopbrand" column="shopbrand" javaType="java.lang.String"/>
+		<result property="shopmodel" column="shopmodel" javaType="java.lang.String"/>
+		
+		<result property="activitycode" column="activitycode" javaType="java.lang.String"/>
+		<result property="salesname" column="salesname" javaType="java.lang.String"/>
+		<result property="salestelephone" column="salestelephone" javaType="java.lang.String"/>
+<!-- 		<association property="store" javaType="org.j137.xiaojin.beans.Store" column="fk_store_id" select="org.j137.xiaojin.sellmag.mapper.ReturninfoMapper.findStore"></association>
+		<association property="stores" javaType="org.j137.xiaojin.beans.Stores" column="fk_stores_id" select="org.j137.xiaojin.sellmag.mapper.ReturninfoMapper.findStore"></association> -->
+	</resultMap>	
+	
+	<select id="findReturninfo" resultMap="returninfoMap">
+		select id,clientaccount,clientbank,payment,price,shopbrand,shopmodel,fk_store_id,fk_stores_id,activitycode,salesname,salestelephone from t_returninfo where id=#{id}
+	</select>
+</mapper>
