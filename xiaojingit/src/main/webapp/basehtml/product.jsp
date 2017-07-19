@@ -5,12 +5,12 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
- <link rel="stylesheet" type="text/css" href="../themes/default/easyui.css">
-    <link rel="stylesheet" type="text/css" href="../themes/icon.css">
-    <link rel="stylesheet" type="text/css" href="../themes/demo.css">
-    <script type="text/javascript" src="../js/jquery.min.js"></script>
-    <script type="text/javascript" src="../js/jquery.easyui.min.js"></script>
-    <script type="text/javascript" src="../js/jquery.easyui.mobile.js"></script>
+ <link rel="stylesheet" type="text/css" href="../static/themes/default/easyui.css">
+    <link rel="stylesheet" type="text/css" href="../static/themes/icon.css">
+    <link rel="stylesheet" type="text/css" href="../static/themes/demo.css">
+    <script type="text/javascript" src="../static/js/jquery.min.js"></script>
+    <script type="text/javascript" src="../static/js/jquery.easyui.min.js"></script>
+    <script type="text/javascript" src="../static/js/jquery.easyui.mobile.js"></script>
 </head>
 <style type="text/css">
     *{
@@ -18,7 +18,7 @@
         margin: 0;
     }
     .shou{
-        float: left;
+        float: left;]
         margin-left: 40px;
         margin-top: 30px;
     }

@@ -25,10 +25,10 @@
     <bean id="tc" class="org.springframework.context.support.ConversionServiceFactoryBean">
     	<property name="converters">
     		<set>
-    			<bean class="org.j137.xiaojin.converter.GlobalDateConverter"></bean>
+    			<bean class="org.j137.xiaojin.contorller.GlobalDateConverter"></bean>
     		</set>
     	</property>
-    </bean>
+    </bean> 
     
     <!-- 配置一个试图解析器ViewResolver(应用控制器) --> 
     <bean id="internalResourceViewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
