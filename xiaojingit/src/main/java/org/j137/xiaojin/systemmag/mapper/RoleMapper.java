@@ -8,7 +8,6 @@ import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.ResultType;
 import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.annotations.Update;
-import org.j137.xiaojin.beans.Page;
 import org.j137.xiaojin.beans.Role;
 
 public interface RoleMapper {
@@ -18,7 +17,6 @@ public interface RoleMapper {
 	 */
 	@Insert("insert into t_role values(null,#{role.roleName},#{role.roleCode},#{role.state},#{role.roleType},#{role.organization.id},1)")
 	public void saveRole(@Param("role")Role role);
-	
 	/**
 	 * 修改一个角色
 	 * @param role
@@ -40,6 +38,7 @@ public interface RoleMapper {
 	/**
 	 *查询总条目 
 	 */
+	
 	@ResultType(Integer.class)
 	@Select("select count(id) as num from t_role where exist=1")
 	public int findRoleNum();

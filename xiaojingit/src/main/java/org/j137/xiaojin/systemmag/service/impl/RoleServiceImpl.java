@@ -35,10 +35,8 @@ public class RoleServiceImpl implements IRoleService{
 	}
 
 	@Override
-	public Page findRole(Page page) {
+	public Page findRole(Map map) {
 		// TODO Auto-generated method stub
-		Map map=new HashMap();
-		map.put("page", page);
 		return roleDaoImpl.findRole(map);
 	}
 

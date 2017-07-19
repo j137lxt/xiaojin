@@ -1,5 +1,6 @@
 package org.j137.xiaojin.systemmag.dao.impl;
 
+import java.util.List;
 import java.util.Map;
 
 import javax.annotation.Resource;
@@ -31,8 +32,9 @@ public class RoleDaoImpl implements IRoleDao {
 
 	@Override
 	public Page findRole(Map map) {
-		Page page=(Page) map.get("page");
-		page.setData(rm.findRole(map));
+		Page page = (Page) map.get("page");
+		List list=rm.findRole(map);
+		page.setData(list);
 		return page;
 	}
 

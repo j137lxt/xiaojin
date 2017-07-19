@@ -42,7 +42,7 @@ public interface OrganizationMapper {
 	 */
 	@ResultType(java.util.List.class)
 	@Select("select id as id,org_name as orgName,org_code as orgCode,grand_org as grandOrg,sort as sort,state as state,remark as remark,exist as exist from t_organization where exist=1")
-	public List findAllOrg(Page page);
+	public List<Organization> findAllOrg(Page page);
 	
 	/**
 	 *查询总条目 

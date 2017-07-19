@@ -35,7 +35,7 @@ public interface IRoleService {
 	 * @param role
 	 * @return
 	 */
-	public Page findRole(Page page);
+	public Page findRole(Map map);
 	/**
 	 * 条件查询角色
 	 * @param map
