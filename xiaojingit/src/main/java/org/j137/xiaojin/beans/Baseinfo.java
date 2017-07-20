@@ -40,7 +40,8 @@ public class Baseinfo {
 	private String validate;
 	/**å¾®ä¿¡*/
 	private String wechat;
-	
+	/**ÉêÇëÈÕÆÚ(ÐÂ×Ö¶Î)*/
+	private String applyTime;
 	public Baseinfo() {
 		super();
 		// TODO Auto-generated constructor stub
@@ -175,6 +176,12 @@ public class Baseinfo {
 				+ name + ", nation=" + nation + ", qq=" + qq + ", sex=" + sex + ", telFare=" + telFare + ", telName="
 				+ telName + ", telphone=" + telphone + ", telUseDate=" + telUseDate + ", validate=" + validate
 				+ ", wechat=" + wechat + "]";
+	}
+	public String getApplyTime() {
+		return applyTime;
+	}
+	public void setApplyTime(String applyTime) {
+		this.applyTime = applyTime;
 	}
 
 	

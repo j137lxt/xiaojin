@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.j137.xiaojin.sellmag.mapper.ClientMapper">
+
+<resultMap type="org.j137.xiaojin.beans.Client" id="clientMap">
+<id property="id" javaType="java.lang.Long" column="id" />
+<association property="baseinfo" javaType="org.j137.xiaojin.beans.Baseinfo" column="id" select="org.j137.xiaojin.sellmag.mapper.BaseinfoMapper.findBaseinfo"/>
+<association property="addressinfo" javaType="org.j137.xiaojin.beans.Addressinfo" column="id" select="org.j137.xiaojin.sellmag.mapper.AddressinfoMapper.findAddressinfo"/>
+<association property="familyinfo"  javaType="org.j137.xiaojin.beans.Familyinfo" column="id" select="org.j137.xiaojin.sellmag.mapper.FamilyinfoMapper.findFamilyinfo"/>
+<association property="workinfo"  javaType="org.j137.xiaojin.beans.Workinfo" column="id" select="org.j137.xiaojin.sellmag.mapper.WorkinfoMapper.findWorkinfo"/>
+<association property="otherinfo" javaType="org.j137.xiaojin.beans.Otherinfo" column="id" select="org.j137.xiaojin.sellmag.mapper.OtherinfoMapper.findOtherinfo"/>
+<association property="returninfo" javaType="org.j137.xiaojin.beans.Returninfo" column="id" select="org.j137.xiaojin.sellmag.mapper.ReturninfoMapper.findReturninfo"/>
+<association property="remarkinfo" javaType="org.j137.xiaojin.beans.Remarkinfo" column="id" select="org.j137.xiaojin.sellmag.mapper.RemarkinfoMapper.findRemarkinfo"/>
+
+</resultMap>
+
+<select id="findClient" resultMap="clientMap">
+select b.id as id from t_baseinfo as b left join t_addressinfo as a on a.id=b.id left join t_familyinfo as f on f.id=b.id left join t_workinfo as w on w.id=b.id left join t_otherinfo as o on o.id=b.id left join t_returninfo as ret on ret.id=b.id left join t_remarkinfo as rem on rem.id=b.id 
+<where>
+<if test="saleName != null and saleName != ''">
+	and	ret.salesname=#{saleName}
+</if>
+<if test="salestelephone != null and salestelephone != ''">
+	and ret.salestelephone=#{salestelephone}
+</if>
+<if test="startApplyTime != null and startApplyTime != ''">
+	and b.apply_time &gt; #{startApplyTime}
+</if>
+<if test="startApplyTime != null and startApplyTime != ''">
+	and b.apply_time &lt; #{endApplyTime}
+</if>
+<if test="startApplyTime != null and startApplyTime != ''">
+	and b.apply_time = #{startApplyTime}
+</if>
+<if test="name != null and name != ''">
+	and b.name like concat(#{name},'%')
+</if>
+<if test="idCard != null and idCard != ''">
+	and b.cardnumber = #{idCard}
+</if>
+<if test="activitycode != null and activitycode != ''">
+	and ret.activitycode = #{activitycode}
+</if>
+<if test="shopbrand != null and shopbrand != ''">
+	and ret.shopbrand like concat(#{shopbrand},'%')
+</if>
+<if test="storeCode != null and storeCode != ''">
+	and ret.fk_store_id = (select from t_store where store_code = #{storeCode})
+</if>
+
+
+</where> 
+</select>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</mapper>

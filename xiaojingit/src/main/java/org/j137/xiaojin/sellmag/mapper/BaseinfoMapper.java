@@ -14,7 +14,7 @@ import org.j137.xiaojin.beans.Baseinfo;
  */
 public interface BaseinfoMapper {
 	/**
-	 * 保存基本信息
+	 * 保存基本信息(7/20添加申请时间字段)
 	 * @param info 基本信息对象
 	 * @return
 	 */
@@ -22,7 +22,7 @@ public interface BaseinfoMapper {
 			+ "census,nation,telphone,tel_use_date,tel_fare,isregister,"
 			+ "qq,wechat,addr_tel,tel_name) values (#{info.name},#{info.sex},#{info.cardtype},#{info.cardnumber},#{info.validate},"
 			+ "#{info.credentials},#{info.census},#{info.nation},#{info.telphone},#{info.telUseDate},#{info.telFare},#{info.isregister},#{info.qq},"
-			+ "#{info.wechat},#{info.addrTel},#{info.telName})")
+			+ "#{info.wechat},#{info.addrTel},#{info.telName},now())")
 	@Options(useGeneratedKeys=true,keyProperty="info.id")
 	public int saveBaseinfo(@Param("info")Baseinfo info);
 
