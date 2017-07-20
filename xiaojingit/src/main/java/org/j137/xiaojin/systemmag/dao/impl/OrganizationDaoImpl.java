@@ -36,6 +36,7 @@ public class OrganizationDaoImpl implements IOrganizationDao {
 		
 		List list=om.findAllOrg(page);
 		page.setData(list);
+		page.setTolPoint(om.findOrganizationNum());
 		return page;
 	}
 

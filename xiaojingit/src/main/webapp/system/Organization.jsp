@@ -10,9 +10,10 @@
 <link rel="stylesheet" type="text/css" href="../static/themes/icon.css">
 <script type="text/javascript" src="../static/js/jquery.min.js"></script>
 <script type="text/javascript" src="../static/js/jquery.easyui.min.js"></script>
+<script type="text/javascript" src="../static/js/jquery.json-2.4.js"></script>
 </head>
 <body>
-	<button id="add" class="easyui-linkbutton">新增</button>
+	<button id="add" class="easyui-linkbutton" onclick="addchild(0)">新增</button>
 	<br />
 	<div style="width: 1000px">
 		<table id="orgList"></table>
@@ -26,17 +27,28 @@
 状态：<input type="text" id="state"/><br>
 排序：<input type="text" id="sort"/>
 备注：<input type="text" id="remark"/><br>
-        <button id="addOrg" onclick="addOrg">添加</button>
-        <button id="updateOrg" onclick="updateOrg">修改</button>
+        <button id="addOrg" onclick="addOrg()">添加</button>
+        <button id="updateOrg" onclick="updateOrg()">修改</button>
         <button id="cancle">取消</button>
         </div>
         
-       <div class="easyui-panel">
-		<div id="page" class="easyui-pagination" data-options="total:2"></div>
+       <div class="easyui-panel" style="width: 1000px">
+		<div id="page" class="easyui-pagination" data-options="total:0"></div>
 	</div>
 </body>
 </html>
 <script>
+$(function(){
+	$.ajax({
+		type: 'POST',
+		url:'organization/findOrgNum',
+		dataType: "json",
+		success:function(data){
+		$("#page").pagination({total:data.tolPoint})
+		}
+	})
+	  alert($("#page").pagination('options').pageNumber)
+})
     $('#orgList').datagrid({
         url:'organization/findAll',
         columns:[[
@@ -54,6 +66,7 @@
             },
         ]]
     })
+  
 	function addchild(id){
     	$("#addframe").panel("open");
     	$("#addOrg").show();
@@ -67,4 +80,21 @@
     function deleteOrg(id){
     	
     } 
+    function addOrg(){
+    	var Org={id:"",grandOrg:$("#grandOrg").val(),orgName:$("#orgName").val(),orgCode:$("#orgCode").val(),state:$("#state").val(),sort:$("#sort").val(),remark:$("#remark").val()}
+		var json=$.toJSON(Org);
+    	$.ajax({
+			type:'Post',
+			data:json,
+			contentType:"application/json",
+			url:"organization/addOrg",
+			success:function(data){
+				alert("成功");
+			}
+		})
+    
+    }
+    function updateOrg(){
+    	
+    }
 </script>
